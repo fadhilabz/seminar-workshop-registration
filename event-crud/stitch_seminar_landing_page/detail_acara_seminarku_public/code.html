@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Acara | SeminarKu</title>
+<!-- Google Fonts: Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b5c8e5",
+                        "surface-dim": "#d0dce0",
+                        "tertiary-fixed": "#65fbcf",
+                        "surface-bright": "#f0fbff",
+                        "inverse-surface": "#273235",
+                        "primary": "#000917",
+                        "on-secondary-fixed-variant": "#004e59",
+                        "on-surface-variant": "#44474d",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#009a79",
+                        "surface-container-low": "#eaf6fa",
+                        "tertiary-container": "#00261c",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d9e5e8",
+                        "on-secondary-fixed": "#001f24",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4d6079",
+                        "tertiary-fixed-dim": "#40deb3",
+                        "inverse-primary": "#b5c8e5",
+                        "secondary": "#006876",
+                        "surface-container": "#e4f0f4",
+                        "on-tertiary-fixed": "#002117",
+                        "on-tertiary-fixed-variant": "#00513e",
+                        "on-secondary-container": "#006d7b",
+                        "secondary-container": "#92edff",
+                        "on-primary-container": "#7689a4",
+                        "surface-container-highest": "#d9e5e8",
+                        "background": "#f0fbff",
+                        "secondary-fixed-dim": "#77d4e5",
+                        "on-surface": "#121d20",
+                        "surface-container-high": "#deeaee",
+                        "secondary-fixed": "#9eefff",
+                        "on-primary-fixed-variant": "#364860",
+                        "inverse-on-surface": "#e7f3f7",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d2e4ff",
+                        "outline-variant": "#c4c6cd",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#121d20",
+                        "outline": "#74777d",
+                        "primary-container": "#0d2137",
+                        "tertiary": "#000c07",
+                        "surface": "#f0fbff",
+                        "on-primary-fixed": "#081c32",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "label-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .sticky-card {
+            top: 100px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-tertiary-fixed selection:text-tertiary-container">
+<!-- TopNavBar -->
+<nav class="bg-primary-container docked full-width top-0 sticky z-50 shadow-sm h-20 flex items-center">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container">
+                SeminarKu
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-full font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 scale-95 active:scale-90">Login</button>
+<button class="px-6 py-2 rounded-full font-label-lg text-label-lg bg-on-tertiary-container text-white hover:opacity-90 transition-all duration-200 scale-95 active:scale-90">Register</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Content (60%) -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Large Image Banner -->
+<div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional academic seminar hall with a large digital screen showcasing a high-tech presentation. The atmosphere is sophisticated and modern, with soft navy blue lighting and teal accents. Audience members are blurred in the foreground, creating depth. The image captures a sense of innovation, professional growth, and academic excellence in a light-filled contemporary space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_BlRpzru16FujielaKOFiY0mWVStA36hN90VaaJNnCwajfYtZMDORP4kiq4ed68JytYjSm1f9MACjMCIHy8_WRnLsepwI6DP9EZDuwyilKwfIrl0cm3YgwOGiW5U8tggK6eJo0uREiATFm-k5_uFCvLyz53u22tAaxfX1TURnX2hY9IJ2MfcDaZBFmCAGcvj7zZju4OhaEYg-zlKN6oZlau--CNq8qbHS4geLpQcZ0prluGybfgG_Bw"/>
+<div class="absolute top-6 left-6">
+<span class="px-4 py-2 bg-on-tertiary-container text-white font-label-md text-label-md rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                            Seminar Nasional
+                        </span>
+</div>
+</div>
+<!-- Event Identity -->
+<div class="space-y-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">Teknologi</span>
+<span class="px-3 py-1 bg-surface-container-high text-outline rounded-full font-label-md text-label-md">Artificial Intelligence</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">
+                        Transformasi Digital: Masa Depan AI dalam Ekosistem Bisnis 2025
+                    </h1>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-surface-container-lowest rounded-3xl border border-outline-variant/30">
+<div class="flex flex-col gap-1">
+<span class="text-outline font-label-md text-label-md">Tanggal</span>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-primary">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+                            15 Des 2024
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-outline font-label-md text-label-md">Waktu</span>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-primary">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+                            09:00 WIB
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-outline font-label-md text-label-md">Lokasi</span>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-primary">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+                            Jakarta
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-outline font-label-md text-label-md">Sisa Kuota</span>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-on-tertiary-container">
+<span class="material-symbols-outlined">person</span>
+                            45 Kursi
+                        </div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">Tentang Acara</h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed space-y-4">
+<p>
+                            Selamat datang di seminar eksklusif yang dirancang khusus untuk para profesional dan inovator yang ingin mendalami potensi AI dalam dunia bisnis. Dalam sesi ini, kita akan menjelajahi bagaimana model bahasa besar dan visi komputer mengubah cara operasional perusahaan modern.
+                        </p>
+<p>
+                            Pembicara utama kami berasal dari jajaran eksekutif teknologi global yang telah sukses mengimplementasikan solusi berbasis AI untuk meningkatkan efisiensi hingga 40%. Anda tidak hanya akan mendapatkan teori, tetapi juga studi kasus nyata yang aplikatif.
+                        </p>
+</div>
+<!-- Highlights -->
+<div class="bg-surface-container-low rounded-3xl p-8 space-y-4">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-widest">Apa yang akan Anda dapatkan?</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="text-on-surface">E-Certificate Resmi SeminarKu &amp; Partner</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="text-on-surface">Materi Eksklusif PDF &amp; Toolkit Bisnis AI</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="text-on-surface">Networking dengan 200+ Profesional lainnya</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Card (40%) -->
+<div class="lg:col-span-5 relative h-full">
+<div class="sticky sticky-card p-8 bg-white rounded-[32px] shadow-2xl shadow-primary/5 border border-outline-variant/20 space-y-8">
+<div>
+<span class="text-outline font-label-md text-label-md block mb-1">Harga Tiket</span>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary">Rp 250.000</span>
+<span class="text-outline line-through text-label-md">Rp 500.000</span>
+</div>
+<p class="text-on-tertiary-container font-label-md text-label-md mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_offer</span>
+                            Hemat 50% hingga besok!
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-label-lg">
+<span class="text-on-surface">Slot Tersedia</span>
+<span class="text-primary font-bold">155 / 200</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container transition-all duration-1000 ease-out" style="width: 77%"></div>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full py-4 bg-on-tertiary-container text-white rounded-2xl font-label-lg text-headline-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all duration-200">
+                            Daftar Sekarang
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-outline text-label-md">
+                            Transaksi aman &amp; terverifikasi oleh SeminarKu
+                        </p>
+</div>
+<div class="pt-6 border-t border-outline-variant/30 grid grid-cols-3 gap-4 text-center">
+<div class="space-y-1">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="block text-[10px] uppercase font-bold text-outline">Terpercaya</span>
+</div>
+<div class="space-y-1">
+<span class="material-symbols-outlined text-secondary">account_balance_wallet</span>
+<span class="block text-[10px] uppercase font-bold text-outline">Refundable</span>
+</div>
+<div class="space-y-1">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<span class="block text-[10px] uppercase font-bold text-outline">24/7 CS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Events Section -->
+<section class="mt-24 space-y-8">
+<div class="flex justify-between items-end">
+<div class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-primary">Acara Serupa</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Mungkin Anda juga tertarik dengan topik-topik ini.</p>
+</div>
+<a class="text-secondary font-label-lg text-label-lg flex items-center gap-2 hover:gap-3 transition-all duration-300" href="#">
+                    Lihat Semua
+                    <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+<!-- Bento-style/Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group bg-white p-4 rounded-[24px] border border-outline-variant/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A futuristic workspace with holographic UI elements glowing in soft seafoam green. High-end professional laptop and digital accessories sit on a clean white desk. The lighting is bright and ethereal, reflecting a corporate modern aesthetic with navy and teal highlights. Depth of field focuses on the sharp digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKAl8W3VNfJVTQy70wrOyHnGITAMr2fkMfFEkGbTJmZO93TCcVf_c6ucdo4xn6GT1tOFoXCMAJtizTOl0yvI1RquYIeAncgz_nKaq7mJoTT6_UeCXo8IF8tLrHPNw3T4XaYsD3IGCfMfNIs6v2NX7q3AimucORVE--oSgLsMHDD0LKnv9JTl2gm7VUMJ6Bv1CTtgMZo2JEht7uKZlgyFrHHQbX-G6LVOlrFrPdzwzAg7K2ySgnHtkLzg"/>
+</div>
+<div class="space-y-3">
+<span class="px-3 py-1 bg-surface-container-low text-secondary rounded-full font-label-md text-label-md">Webinar</span>
+<h3 class="font-headline-md text-headline-md text-primary line-clamp-2">Mastering UI/UX Strategy for Fintech</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-on-tertiary-container font-bold">Gratis</span>
+<span class="text-outline text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                20 Des
+                            </span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white p-4 rounded-[24px] border border-outline-variant/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A high-altitude shot of a bustling metropolitan business district at dawn. Deep navy blue shadows contrast with vibrant seafoam green city lights and modern glass skyscrapers. The atmosphere is professional, ambitious, and clean, representing urban growth and economic strategy. The morning light is crisp and blue-toned." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSzl7gDkm8igEwucSsGofl-9tOJ4uWIJiv6vxr9RwyZ-jXHYFSnTYegP8Q_th8WxoDdG3t8bdlevwLW6JvdkPFD8hLvQhXfWbAOj49-0TmFqsHweyI4iE4sbEmpSw2YT5Kz1xched7RsCS4BQaoHdZjt78pp_fwKGnr6nzBCnOeN9-UPN2mXJFZ-rIq0hoja2qj6eDrreI-CIIdQuvESIRuq8wETeZx9H0GAjN4gvQLcv_CdJkAaSjw"/>
+</div>
+<div class="space-y-3">
+<span class="px-3 py-1 bg-surface-container-low text-secondary rounded-full font-label-md text-label-md">Workshop</span>
+<h3 class="font-headline-md text-headline-md text-primary line-clamp-2">Creative Content Marketing for Startups</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-primary font-bold">Rp 150.000</span>
+<span class="text-outline text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                22 Des
+                            </span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white p-4 rounded-[24px] border border-outline-variant/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="Close-up of high-tech server racks with glowing teal and navy blue LED indicators. The environment is a clean, hyper-modern data center with metallic surfaces and soft ambient lighting. Symbolizing data security and cloud computing infrastructure. The mood is highly professional, reliable, and advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyw32vYhWzF0n0HVi1Yb5hs_-i1nGiQhFTNq8w6BAvoTvFBTRv5JkmItVaPKETMOLJon5TWWBuzmP1hnFMCp1XzSEDvuJlAFEHq8nR4Xxf26t75IzxChSRmW_iwFHvrLbj000D93XuD6fRfaun5T-RYCyVazpbWtZ-JHSYyZDEILgZm6mfkJ2lbt7QS9b1VqVfC1seIw-XAONexUPZ-5xnZhMF2vvmJpmZXmQ4nR1LDUYSNxpsY2U6JQ"/>
+</div>
+<div class="space-y-3">
+<span class="px-3 py-1 bg-surface-container-low text-secondary rounded-full font-label-md text-label-md">Seminar</span>
+<h3 class="font-headline-md text-headline-md text-primary line-clamp-2">Cybersecurity Trends &amp; Data Protection</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-primary font-bold">Rp 300.000</span>
+<span class="text-outline text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                25 Des
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container full-width mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container mb-4">SeminarKu</div>
+<p class="text-on-primary-container font-body-md text-body-md max-w-xs">Platform terpercaya untuk menemukan dan mengikuti seminar berkualitas di seluruh Indonesia.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
+<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Tentang</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+<div class="text-on-primary-container font-body-md text-body-md opacity-70">
+                © 2024 SeminarKu. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for registration card scroll effect
+        window.addEventListener('scroll', () => {
+            const card = document.querySelector('.sticky-card');
+            if (window.scrollY > 100) {
+                card.classList.add('shadow-2xl');
+            } else {
+                card.classList.remove('shadow-2xl');
+            }
+        });
+
+        // Simple animation on load for progress bar
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.querySelector('.bg-on-tertiary-container');
+            if (progressBar) {
+                progressBar.style.width = '0%';
+                setTimeout(() => {
+                    progressBar.style.width = '77%';
+                }, 500);
+            }
+        });
+    </script>
+</body></html>
