@@ -1,13 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html class="light" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tambah Acara Baru - SeminarKu</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+@section('title', 'Tambah Acara Baru')
+
+@section('content')
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -116,8 +111,8 @@
             box-shadow: 0 0 0 2px rgba(2, 128, 144, 0.2);
         }
     </style>
-</head>
-<body class="font-body-md text-on-surface">
+
+
 <!-- Top Navigation Bar -->
 <header class="bg-primary-container docked full-width top-0 shadow-sm h-20 z-50 sticky">
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
@@ -125,13 +120,13 @@
 <span class="font-headline-md text-headline-md font-bold text-on-tertiary-container dark:text-tertiary-fixed">SeminarKu</span>
 </div>
 <nav class="hidden md:flex items-center gap-gutter">
-<a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="#">Home</a>
-<a class="font-label-lg text-label-lg text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1" href="#">Acara</a>
+<a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="{{ route('home') }}">Home</a>
+<a class="font-label-lg text-label-lg text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1" href="{{ route('events.index') }}">Acara</a>
 <a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="#">Tentang</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors scale-95 active:scale-90 transition-transform">Login</button>
-<button class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:bg-secondary/90">Register</button>
+<a href="{{ route('login') }}" class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors scale-95 active:scale-90 transition-transform">Login</a>
+<a href="{{ route('register') }}" class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:bg-secondary/90">Register</a>
 </div>
 </div>
 </header>
@@ -147,6 +142,7 @@
 </div>
 <!-- Form Section -->
 <form class="space-y-gutter" id="event-form">
+    @csrf
 <div class="bg-surface-container-lowest p-gutter rounded-[24px] form-card border border-outline-variant/30">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <!-- Title Section -->
@@ -266,8 +262,8 @@
 <p class="font-body-md text-on-primary-container mt-2">Pusat edukasi dan pengembangan profesional.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-gutter mb-6 md:mb-0">
-<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="#">Home</a>
-<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="#">Acara</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="{{ route('home') }}">Home</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="{{ route('events.index') }}">Acara</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="#">Tentang</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="#">Privacy Policy</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline" href="#">Terms of Service</a>
@@ -356,4 +352,5 @@
             });
         });
     </script>
-</body></html>
+
+@endsection

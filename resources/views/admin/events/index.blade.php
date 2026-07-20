@@ -1,13 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kelola Acara - SeminarKu Admin</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+@section('title', 'Kelola Acara')
+
+@section('content')
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -121,22 +116,22 @@
             to { opacity: 0; }
         }
     </style>
-</head>
-<body class="min-h-screen flex flex-col">
+
+
 <!-- TopNavBar -->
 <nav class="bg-primary-container docked full-width top-0 shadow-sm h-20 flex items-center z-50">
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
 <div class="flex items-center gap-8">
 <span class="font-headline-md text-headline-md font-bold text-on-tertiary-container">SeminarKu</span>
 <div class="hidden md:flex gap-6">
-<a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="#">Home</a>
-<a class="font-label-lg text-label-lg text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1" href="#">Acara</a>
+<a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="{{ route('home') }}">Home</a>
+<a class="font-label-lg text-label-lg text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1" href="{{ route('events.index') }}">Acara</a>
 <a class="font-label-lg text-label-lg text-on-primary-container hover:text-on-tertiary-container transition-colors" href="#">Tentang</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 px-4 py-2 rounded-lg scale-95 active:scale-90 transition-transform">Login</button>
-<button class="font-label-lg text-label-lg bg-on-tertiary-container text-white px-6 py-2 rounded-full scale-95 active:scale-90 transition-transform">Register</button>
+<a href="{{ route('login') }}" class="font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 px-4 py-2 rounded-lg scale-95 active:scale-90 transition-transform">Login</a>
+<a href="{{ route('register') }}" class="font-label-lg text-label-lg bg-on-tertiary-container text-white px-6 py-2 rounded-full scale-95 active:scale-90 transition-transform">Register</a>
 </div>
 </div>
 </nav>
@@ -158,10 +153,10 @@
 <h1 class="font-headline-lg text-headline-lg text-primary mb-2">Kelola Acara</h1>
 <p class="font-body-md text-body-md text-on-surface-variant">Pantau, edit, dan kelola semua daftar seminar yang terdaftar.</p>
 </div>
-<button class="flex items-center gap-2 bg-on-tertiary-container text-primary-container font-label-lg text-label-lg px-8 py-4 rounded-full shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200">
+<a href="{{ route('admin.events.create') }}" class="flex items-center gap-2 bg-on-tertiary-container text-primary-container font-label-lg text-label-lg px-8 py-4 rounded-full shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200">
 <span class="material-symbols-outlined">add</span>
                 Tambah Acara
-            </button>
+            </a>
 </div>
 <!-- Table Container -->
 <div class="bg-surface-container-lowest rounded-[24px] shadow-[0_12px_40px_-12px_rgba(0,9,23,0.05)] border border-outline-variant/30 overflow-hidden">
@@ -204,12 +199,16 @@
 </td>
 <td class="px-6 py-4">
 <div class="flex items-center justify-center gap-3">
-<button class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all" title="Edit">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
-<span class="material-symbols-outlined">delete</span>
-</button>
+<a href="{{ route('admin.events.edit', 1) }}" class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all inline-block" title="Edit">
+        <span class="material-symbols-outlined">edit</span>
+    </a>
+<form action="{{ route('admin.events.destroy', 1) }}" method="POST" class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </form>
 </div>
 </td>
 </tr>
@@ -236,12 +235,16 @@
 </td>
 <td class="px-6 py-4">
 <div class="flex items-center justify-center gap-3">
-<button class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all" title="Edit">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
-<span class="material-symbols-outlined">delete</span>
-</button>
+<a href="{{ route('admin.events.edit', 1) }}" class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all inline-block" title="Edit">
+        <span class="material-symbols-outlined">edit</span>
+    </a>
+<form action="{{ route('admin.events.destroy', 1) }}" method="POST" class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </form>
 </div>
 </td>
 </tr>
@@ -268,12 +271,16 @@
 </td>
 <td class="px-6 py-4">
 <div class="flex items-center justify-center gap-3">
-<button class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all" title="Edit">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
-<span class="material-symbols-outlined">delete</span>
-</button>
+<a href="{{ route('admin.events.edit', 1) }}" class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all inline-block" title="Edit">
+        <span class="material-symbols-outlined">edit</span>
+    </a>
+<form action="{{ route('admin.events.destroy', 1) }}" method="POST" class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </form>
 </div>
 </td>
 </tr>
@@ -300,12 +307,16 @@
 </td>
 <td class="px-6 py-4">
 <div class="flex items-center justify-center gap-3">
-<button class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all" title="Edit">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
-<span class="material-symbols-outlined">delete</span>
-</button>
+<a href="{{ route('admin.events.edit', 1) }}" class="p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-all inline-block" title="Edit">
+        <span class="material-symbols-outlined">edit</span>
+    </a>
+<form action="{{ route('admin.events.destroy', 1) }}" method="POST" class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="p-2 text-error hover:bg-error/10 rounded-lg transition-all" title="Hapus">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </form>
 </div>
 </td>
 </tr>
@@ -341,8 +352,8 @@
                 </p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
-<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="#">Home</a>
-<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="#">Acara</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="{{ route('home') }}">Home</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="{{ route('events.index') }}">Acara</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="#">Tentang</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="#">Privacy Policy</a>
 <a class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-all" href="#">Terms of Service</a>
@@ -376,4 +387,5 @@
             });
         });
     </script>
-</body></html>
+
+@endsection

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html class="light" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Detail Acara | SeminarKu</title>
-<!-- Google Fonts: Montserrat -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+@section('title', 'Detail Acara')
+
+@section('content')
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -116,8 +108,8 @@
             top: 100px;
         }
     </style>
-</head>
-<body class="bg-background text-on-background font-body-md selection:bg-tertiary-fixed selection:text-tertiary-container">
+
+
 <!-- TopNavBar -->
 <nav class="bg-primary-container docked full-width top-0 sticky z-50 shadow-sm h-20 flex items-center">
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
@@ -125,13 +117,13 @@
                 SeminarKu
             </div>
 <div class="hidden md:flex items-center gap-8">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Home</a>
-<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route('home') }}">Home</a>
+<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="px-6 py-2 rounded-full font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 scale-95 active:scale-90">Login</button>
-<button class="px-6 py-2 rounded-full font-label-lg text-label-lg bg-on-tertiary-container text-white hover:opacity-90 transition-all duration-200 scale-95 active:scale-90">Register</button>
+<a href="{{ route('login') }}" class="px-6 py-2 rounded-full font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 scale-95 active:scale-90">Login</a>
+<a href="{{ route('register') }}" class="px-6 py-2 rounded-full font-label-lg text-label-lg bg-on-tertiary-container text-white hover:opacity-90 transition-all duration-200 scale-95 active:scale-90">Register</a>
 </div>
 </div>
 </nav>
@@ -347,8 +339,8 @@
 <p class="text-on-primary-container font-body-md text-body-md max-w-xs">Platform terpercaya untuk menemukan dan mengikuti seminar berkualitas di seluruh Indonesia.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
-<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Home</a>
-<a class="text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="{{ route('home') }}">Home</a>
+<a class="text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Tentang</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
@@ -380,4 +372,5 @@
             }
         });
     </script>
-</body></html>
+
+@endsection

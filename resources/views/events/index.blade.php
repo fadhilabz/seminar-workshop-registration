@@ -1,16 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html class="light" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Semua Acara - SeminarKu</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+@section('title', 'Semua Acara')
+
+@section('content')
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -110,20 +102,20 @@
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(13, 33, 55, 0.1); }
         .transition-standard { transition: all 200ms ease-in-out; }
     </style>
-</head>
-<body class="text-on-surface">
+
+
 <!-- Top Navigation Bar -->
 <nav class="bg-primary-container docked full-width top-0 shadow-sm sticky z-50">
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
 <div class="font-headline-md text-headline-md font-bold text-on-tertiary-container">SeminarKu</div>
 <div class="hidden md:flex items-center gap-8">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Home</a>
-<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route('home') }}">Home</a>
+<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="px-6 py-2 rounded-full border border-on-primary-container text-on-primary-container font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:bg-primary/10">Login</button>
-<button class="px-6 py-2 rounded-full bg-on-tertiary-container text-white font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:brightness-110">Register</button>
+<a href="{{ route('login') }}" class="px-6 py-2 rounded-full border border-on-primary-container text-on-primary-container font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:bg-primary/10">Login</a>
+<a href="{{ route('register') }}" class="px-6 py-2 rounded-full bg-on-tertiary-container text-white font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:brightness-110">Register</a>
 </div>
 </div>
 </nav>
@@ -330,8 +322,8 @@
 <p class="font-body-md text-body-md text-on-primary-container max-w-xs text-center md:text-left">Platform pendaftaran seminar dan workshop terpercaya untuk masa depan cerah Anda.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Home</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="{{ route('home') }}">Home</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Tentang</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Privacy Policy</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Terms of Service</a>
@@ -364,4 +356,5 @@
             searchInput.parentElement.classList.remove('scale-[1.01]');
         });
     </script>
-</body></html>
+
+@endsection
