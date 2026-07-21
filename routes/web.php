@@ -3,18 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
 
-// Public routes
-Route::get('/', fn() => view('welcome'))->name('home');
-Route::get('/acara', fn() => view('events.index'))->name('events.index');
-Route::get('/acara/{id}', fn() => view('events.show'))->name('events.show');
-Route::get('/tentang', fn() => view('about'))->name('about');
-
-// Auth routes
-require __DIR__.'/auth.php';
-
-// User routes (after login)
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+Route::get('/', function () {
+    return view('home');
 });
 
 // Admin routes (admin only)
