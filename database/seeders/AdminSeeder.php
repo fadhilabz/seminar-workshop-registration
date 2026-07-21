@@ -13,12 +13,15 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'Admin SeminarKu',
-            'email' => 'admin@seminarku.com',
-            'password' => Hash::make('password'),
-            'role' => 'admin',
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'dil123@seminarku.test'],
+            [
+                'name' => 'Admin Dil',
+                'username' => 'dil123',
+                'password' => Hash::make('dil123'),
+                'role' => 'admin',
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }

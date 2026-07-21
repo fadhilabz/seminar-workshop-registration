@@ -4,8 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Lupa Kata Sandi - SeminarKu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     </head>
 <body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col glass-background">
 <header class="w-full h-20 flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">

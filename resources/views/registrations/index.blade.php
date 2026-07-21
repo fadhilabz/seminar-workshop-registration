@@ -3,7 +3,6 @@
 @section('title', 'Riwayat Pendaftaran Saya - SeminarKu')
 
 @section('content')
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- TopNavBar -->
@@ -11,8 +10,8 @@
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
 <div class="font-headline-md text-headline-md font-bold text-on-tertiary-container">SeminarKu</div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route(\'home\') }}">Home</a>
-<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route(\'events.index\') }}">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route('home') }}">Home</a>
+<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
 </nav>
 <div class="flex items-center gap-4">
@@ -153,8 +152,8 @@
 <p class="text-on-primary-container font-body-md text-body-md text-center md:text-left opacity-70">Empowering professional growth through quality seminars.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
-<a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="{{ route(\'home\') }}">Home</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="{{ route(\'events.index\') }}">Acara</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="{{ route('home') }}">Home</a>
+<a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="{{ route('events.index') }}">Acara</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="#">Tentang</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="#">Privacy Policy</a>
 <a class="text-on-primary-container hover:text-on-tertiary-container font-body-md text-body-md transition-all hover:underline" href="#">Terms of Service</a>

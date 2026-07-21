@@ -12,15 +12,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                "headline-lg-mobile": ["Montserrat"],
-                "label-lg": ["Montserrat"],
-                "body-lg": ["Montserrat"],
-                "headline-lg": ["Montserrat"],
-                "label-md": ["Montserrat"],
-                "headline-xl": ["Montserrat"],
-                "headline-md": ["Montserrat"],
-                "body-md": ["Montserrat"],
+                sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                "headline-lg-mobile": ["Poppins"],
+                "label-lg": ["Poppins"],
+                "body-lg": ["Poppins"],
+                "headline-lg": ["Poppins"],
+                "label-md": ["Poppins"],
+                "headline-xl": ["Poppins"],
+                "headline-md": ["Poppins"],
+                "body-md": ["Poppins"],
             },
             colors: {
                 "on-surface-variant": "#44474d",

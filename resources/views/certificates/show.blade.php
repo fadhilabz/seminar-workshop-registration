@@ -1,15 +1,13 @@
 @extends('layouts.app')
 @section('title', 'Preview Sertifikat')
 @section('content')
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
 <div class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
 <!-- TopAppBar Mapping -->
 <header class="fixed top-0 w-full z-50 bg-brand-navy shadow-sm">
 <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="flex items-center gap-6">
-<a href="{{ route(\'certificates.index\') }}" class="text-on-primary flex items-center gap-2 font-label-lg hover:opacity-80 transition-opacity">
+<a href="{{ route('certificates.index') }}" class="text-on-primary flex items-center gap-2 font-label-lg hover:opacity-80 transition-opacity">
 <span class="material-symbols-outlined">arrow_back</span>
 <span>Kembali</span>
 </a>
@@ -17,7 +15,7 @@
 </div>
 <div class="hidden md:flex gap-8 items-center">
 <nav class="flex gap-6">
-<a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors" href="{{ route(\'certificates.index\') }}">Certificates</a>
+<a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors" href="{{ route('certificates.index') }}">Certificates</a>
 <a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors" href="#">Admin Panel</a>
 <a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors" href="#">Support</a>
 </nav>
@@ -61,15 +59,15 @@
 <!-- Icon Top -->
 <div class="text-6xl mb-6">🎓</div>
 <!-- Header Text -->
-<h3 class="font-serif-elegant text-4xl md:text-5xl text-brand-navy tracking-widest uppercase mb-4">SERTIFIKAT KEIKUTSERTAAN</h3>
+<h3 class="font-sans text-4xl md:text-5xl text-brand-navy tracking-widest uppercase mb-4">SERTIFIKAT KEIKUTSERTAAN</h3>
 <!-- Teal Divider -->
 <div class="w-1/2 h-1 bg-brand-teal mb-8"></div>
-<p class="font-serif-elegant text-xl text-on-surface-variant mb-6 italic">Diberikan kepada:</p>
+<p class="font-sans text-xl text-on-surface-variant mb-6 italic">Diberikan kepada:</p>
 <!-- Recipient Name -->
-<h2 class="font-serif-elegant font-bold text-5xl md:text-6xl text-brand-teal mb-10">JOHN DOE</h2>
+<h2 class="font-sans font-bold text-5xl md:text-6xl text-brand-teal mb-10">JOHN DOE</h2>
 <!-- Context -->
 <div class="space-y-2">
-<p class="font-serif-elegant text-2xl text-brand-navy">Telah mengikuti: Seminar Nasional Teknologi AI 2025</p>
+<p class="font-sans text-2xl text-brand-navy">Telah mengikuti: Seminar Nasional Teknologi AI 2025</p>
 <p class="font-label-lg text-on-surface-variant">Diselenggarakan pada 20 Juli 2025 di Aula Universitas</p>
 </div>
 </div>
@@ -98,7 +96,7 @@
 <span class="material-symbols-outlined">download</span>
                             Download PDF
                         </button>
-<a href="{{ route(\'certificates.index\') }}" class="w-full flex items-center justify-center gap-3 border-2 border-brand-teal text-brand-teal py-4 px-6 rounded-lg font-bold text-body-md btn-hover-effect hover:bg-brand-teal hover:text-white">
+<a href="{{ route('certificates.index') }}" class="w-full flex items-center justify-center gap-3 border-2 border-brand-teal text-brand-teal py-4 px-6 rounded-lg font-bold text-body-md btn-hover-effect hover:bg-brand-teal hover:text-white">
 <span class="material-symbols-outlined">list</span>
                             Kembali ke Daftar
                         </a>

@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'Kelola Sertifikat Admin')
 @section('content')
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <div class="bg-background font-body-md text-on-surface min-h-screen flex">
@@ -16,8 +15,8 @@
 <span class="material-symbols-outlined group-hover:text-secondary">dashboard</span>
 <span class="font-label-lg text-label-lg">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all duration-200" href="{{ route(\'admin.certificates.index\') }}">
-<span class="material-symbols-outlined" style="font-variation-settings: \'FILL\' 1;">verified</span>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all duration-200" href="{{ route('admin.certificates.index') }}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
 <span class="font-label-lg text-label-lg">Manage Certificates</span>
 </a>
 <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 rounded-lg group" href="#">
@@ -55,7 +54,7 @@
 </div>
 <div class="flex items-center gap-6">
 <div class="hidden md:flex gap-6">
-<a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors duration-200" href="{{ route(\'certificates.index\') }}">Certificates</a>
+<a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors duration-200" href="{{ route('certificates.index') }}">Certificates</a>
 <a class="text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1 font-label-lg" href="#">Admin Panel</a>
 <a class="text-on-primary-fixed-variant font-label-lg hover:text-tertiary-fixed transition-colors duration-200" href="#">Support</a>
 </div>

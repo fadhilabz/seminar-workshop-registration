@@ -1,61 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'Laporan Statistik')
 @section('content')
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<div class="flex min-h-screen">
-<!-- SideNavBar (Shared Component) -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container shadow-xl flex flex-col py-6 z-40 border-r border-outline-variant/10">
-<div class="font-headline-md text-headline-md text-on-primary font-bold mb-8 px-4">SeminarKu</div>
-<div class="flex flex-col gap-1 overflow-y-auto flex-grow">
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="{{ route(\'admin.dashboard\') }}">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-label-lg text-label-lg">Dashboard</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="{{ route(\'admin.events.index\') }}">
-<span class="material-symbols-outlined">event</span>
-<span class="font-label-lg text-label-lg">Kelola Acara</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="{{ route(\'admin.payments.index\') }}">
-<span class="material-symbols-outlined">group</span>
-<span class="font-label-lg text-label-lg">Kelola Peserta</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="{{ route(\'admin.role.index\') }}">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-lg text-label-lg">Verifikasi Pembayaran</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="{{ route(\'admin.laporan\') }}">
-<span class="material-symbols-outlined">admin_panel_settings</span>
-<span class="font-label-lg text-label-lg">Manajemen Role</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 mx-2 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">workspace_premium</span>
-<span class="font-label-lg text-label-lg">Sertifikat</span>
-</a>
-<!-- Active Tab: Laporan -->
-<a class="flex items-center gap-4 bg-secondary text-on-secondary rounded-lg px-4 py-3 mx-2 scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined">assessment</span>
-<span class="font-label-lg text-label-lg">Laporan</span>
-</a>
-</div>
-<div class="mt-auto px-2 space-y-1">
-<button class="w-full mb-4 bg-secondary-fixed text-on-secondary-fixed font-label-lg py-3 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-<span class="material-symbols-outlined">add_circle</span>
-                Buat Seminar Baru
-            </button>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-label-lg text-label-lg">Settings</span>
-</a>
-<a class="flex items-center gap-4 text-on-primary/70 hover:bg-white/5 rounded-lg px-4 py-3 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-label-lg text-label-lg">Logout</span>
-</a>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="ml-64 flex-1 flex flex-col">
 <!-- Custom Header -->
 <header class="bg-primary-container text-white px-margin-desktop py-12 flex flex-col justify-center">
 <h1 class="font-headline-lg text-headline-lg">Laporan &amp; Statistik</h1>
@@ -277,16 +224,5 @@
 </div>
 </div>
 </div>
-<!-- Footer (Shared Component) -->
-<footer class="w-full mt-auto bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/20 px-margin-desktop py-8 flex flex-col md:flex-row justify-between items-center text-on-surface dark:text-inverse-on-surface">
-<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-4 md:mb-0">SeminarKu</div>
-<div class="flex gap-8 mb-4 md:mb-0">
-<a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
-<a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
-<a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
-</div>
-<div class="font-body-md text-body-md opacity-80">© 2024 SeminarKu. All rights reserved.</div>
-</footer>
-</main>
 </div>
 @endsection

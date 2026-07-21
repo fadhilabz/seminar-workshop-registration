@@ -4,8 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Login - SeminarKu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 <body class="min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- Header / Navigation (Suppressed for focused Login task) -->
@@ -35,14 +35,14 @@
 
             <form class="space-y-6" method="POST" action="{{ route('login') }}">
                 @csrf
-                <!-- Email Input -->
+                <!-- Username Input -->
                 <div class="space-y-2">
-                    <label class="font-label-lg text-label-lg text-on-surface" for="email">Alamat Email</label>
+                    <label class="font-label-lg text-label-lg text-on-surface" for="username">Username</label>
                     <div class="relative flex items-center">
-                        <span class="material-symbols-outlined absolute left-4 text-outline">mail</span>
-                        <input class="w-full pl-12 pr-4 py-4 rounded-xl border border-on-surface/10 bg-white focus:ring-2 focus:ring-on-secondary-container focus:border-on-secondary-container transition-all outline-none font-body-md text-body-md" id="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username" placeholder="nama@email.com" type="email"/>
+                        <span class="material-symbols-outlined absolute left-4 text-outline">person</span>
+                        <input class="w-full pl-12 pr-4 py-4 rounded-xl border border-on-surface/10 bg-white focus:ring-2 focus:ring-on-secondary-container focus:border-on-secondary-container transition-all outline-none font-body-md text-body-md" id="username" name="username" value="{{ old('username') }}" required autofocus autocomplete="username" placeholder="username" type="text"/>
                     </div>
-                    <x-input-error :messages="$errors->get('email')" class="mt-2 text-red-500 text-sm" />
+                    <x-input-error :messages="$errors->get('username')" class="mt-2 text-red-500 text-sm" />
                 </div>
                 <!-- Password Input -->
                 <div class="space-y-2">
@@ -69,7 +69,7 @@
                     </label>
                 </div>
                 <!-- Login Button -->
-                <button class="w-full py-4 bg-secondary text-white rounded-xl font-label-lg text-label-lg shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.98] transition-all duration-200" type="submit">
+                <button class="w-full btn-primary py-4 rounded-xl font-label-lg text-label-lg shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.98] transition-all duration-200" type="submit">
                     Login
                 </button>
             </form>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Sertifikat Saya')
 @section('content')
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <div class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
@@ -11,7 +10,7 @@
 <div class="flex items-center gap-8">
 <span class="font-headline-md text-headline-md font-bold text-on-primary">SeminarKu</span>
 <div class="hidden md:flex gap-6">
-<a class="font-body-md text-body-md text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-tertiary-fixed transition-colors duration-200" href="{{ route(\'certificates.index\') }}">Certificates</a>
+<a class="font-body-md text-body-md text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-tertiary-fixed transition-colors duration-200" href="{{ route('certificates.index') }}">Certificates</a>
 <a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-tertiary-fixed transition-colors duration-200" href="#">Admin Panel</a>
 <a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-tertiary-fixed transition-colors duration-200" href="#">Support</a>
 </div>
@@ -119,7 +118,7 @@
 <button class="py-3 px-4 rounded-xl bg-on-tertiary-container text-on-tertiary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">download</span> PDF
                             </button>
-<a href="{{ route(\'certificates.show\', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
+<a href="{{ route('certificates.show', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">visibility</span> Lihat
                             </a>
 </div>
@@ -161,7 +160,7 @@
 <button class="py-3 px-4 rounded-xl bg-on-tertiary-container text-on-tertiary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">download</span> PDF
                             </button>
-<a href="{{ route(\'certificates.show\', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
+<a href="{{ route('certificates.show', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">visibility</span> Lihat
                             </a>
 </div>
@@ -203,7 +202,7 @@
 <button class="py-3 px-4 rounded-xl bg-on-tertiary-container text-on-tertiary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">download</span> PDF
                             </button>
-<a href="{{ route(\'certificates.show\', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
+<a href="{{ route('certificates.show', 1) }}" class="py-3 px-4 rounded-xl border border-on-tertiary-container text-on-tertiary-container font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-on-tertiary-container/5 active:scale-95 transition-all">
 <span class="material-symbols-outlined text-[18px]">visibility</span> Lihat
                             </a>
 </div>

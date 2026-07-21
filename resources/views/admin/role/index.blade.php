@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.admin')
+@section('content')
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Manajemen Role Pengguna') }}
@@ -108,4 +109,4 @@
             
         </div>
     </div>
-</x-app-layout>
+@endsection

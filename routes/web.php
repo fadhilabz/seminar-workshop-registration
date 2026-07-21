@@ -12,9 +12,21 @@ Route::middleware(['auth', 'verified', 'role:admin'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
-        Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
         Route::get('/role', [RoleController::class, 'index'])->name('role.index');
         Route::patch('/role/{user}', [RoleController::class, 'update'])->name('role.update');
+        
+        // Resource Routes
+        Route::resource('events', \App\Http\Controllers\Admin\EventController::class);
+        Route::resource('certificates', \App\Http\Controllers\Admin\CertificateController::class);
+        Route::resource('payments', \App\Http\Controllers\Admin\PaymentController::class);
+        Route::get('/laporan', fn() => view('admin.laporan'))->name('laporan');
+    });
+
+// User routes
+Route::middleware(['auth', 'verified'])
+    ->group(function () {
+        Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
     });
 
 Route::get('/events', fn() => view('events.index'))->name('events.index');

@@ -34,15 +34,25 @@
   .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(13, 33, 55, 0.1); }
   .transition-standard { transition: all 200ms ease-in-out; }
   .sticky-card { top: 100px; }
+  
+  /* Restored from public/css/home.css */
+  .text-gradient {
+      background: linear-gradient(90deg, #02c39a 0%, #65fbcf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  .hero-gradient {
+      background: linear-gradient(135deg, #0d2137 0%, #028090 100%);
+  }
 }
 
 @layer base {
-  body { background-color: #f0fbff; font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased; }
+  body { background-color: #f0fbff; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   
   /* Added from layouts/guest.blade.php */
   body.auth-page {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0D2137 0%, #028090 100%);
       background-attachment: fixed;
   }
