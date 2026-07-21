@@ -6,10 +6,6 @@
     </x-slot>
 
     <!-- Inject custom styles for the background -->
-    <style>
-        header { background-color: #0D2137 !important; }
-    </style>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col md:flex-row gap-6">
             

@@ -4,107 +4,9 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Lupa Kata Sandi - SeminarKu</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface": "#121d20",
-                    "on-error": "#ffffff",
-                    "surface-bright": "#f0fbff",
-                    "surface-container-low": "#eaf6fa",
-                    "tertiary-fixed": "#65fbcf",
-                    "outline-variant": "#c4c6cd",
-                    "surface-container": "#e4f0f4",
-                    "on-tertiary": "#ffffff",
-                    "on-surface-variant": "#44474d",
-                    "surface": "#f0fbff",
-                    "on-tertiary-fixed": "#002117",
-                    "inverse-surface": "#273235",
-                    "on-secondary-container": "#006d7b",
-                    "on-primary": "#ffffff",
-                    "error": "#ba1a1a",
-                    "secondary-fixed": "#9eefff",
-                    "tertiary-fixed-dim": "#40deb3",
-                    "surface-container-high": "#deeaee",
-                    "on-error-container": "#93000a",
-                    "on-tertiary-fixed-variant": "#00513e",
-                    "on-secondary-fixed-variant": "#004e59",
-                    "error-container": "#ffdad6",
-                    "surface-variant": "#d9e5e8",
-                    "surface-container-highest": "#d9e5e8",
-                    "secondary": "#006876",
-                    "on-background": "#121d20",
-                    "secondary-fixed-dim": "#77d4e5",
-                    "outline": "#74777d",
-                    "background": "#f0fbff",
-                    "on-tertiary-container": "#009a79",
-                    "primary-container": "#0d2137",
-                    "on-secondary-fixed": "#001f24",
-                    "inverse-on-surface": "#e7f3f7",
-                    "inverse-primary": "#b5c8e5",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed": "#d2e4ff",
-                    "on-primary-container": "#7689a4",
-                    "tertiary": "#000c07",
-                    "primary-fixed-dim": "#b5c8e5",
-                    "surface-dim": "#d0dce0",
-                    "on-primary-fixed-variant": "#364860",
-                    "surface-tint": "#4d6079",
-                    "on-primary-fixed": "#081c32",
-                    "secondary-container": "#92edff",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-container": "#00261c",
-                    "primary": "#000917"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-desktop": "48px",
-                    "gutter": "24px",
-                    "margin-mobile": "16px",
-                    "base": "8px",
-                    "container-max": "1280px"
-            },
-            "fontFamily": {
-                    "body-md": ["Montserrat"],
-                    "label-md": ["Montserrat"],
-                    "label-lg": ["Montserrat"],
-                    "headline-xl": ["Montserrat"],
-                    "headline-lg-mobile": ["Montserrat"],
-                    "body-lg": ["Montserrat"],
-                    "headline-md": ["Montserrat"],
-                    "headline-lg": ["Montserrat"]
-            }
-          },
-        },
-      }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-background {
-            background: radial-gradient(circle at top left, rgba(2, 128, 144, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at bottom right, rgba(2, 195, 154, 0.05) 0%, transparent 40%);
-        }
-        .fade-in {
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
+    </head>
 <body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col glass-background">
 <header class="w-full h-20 flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
     <div class="font-headline-md text-headline-md font-bold text-primary-container">
@@ -164,21 +66,5 @@
     </p>
 </footer>
 
-<script>
-    const form = document.getElementById('forgotPasswordForm');
-
-    form.addEventListener('submit', (e) => {
-        const btn = form.querySelector('button[type="submit"]');
-        btn.classList.add('opacity-70', 'cursor-not-allowed');
-    });
-
-    const input = document.getElementById('email');
-    input.addEventListener('focus', () => {
-        input.parentElement.classList.add('scale-[1.01]');
-    });
-    input.addEventListener('blur', () => {
-        input.parentElement.classList.remove('scale-[1.01]');
-    });
-</script>
 </body>
 </html>

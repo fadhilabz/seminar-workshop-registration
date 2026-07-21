@@ -15,38 +15,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
-        <style>
-            body {
-                font-family: 'Outfit', sans-serif;
-                background: linear-gradient(135deg, #0D2137 0%, #028090 100%);
-                background-attachment: fixed;
-            }
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            }
-            .input-custom {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(2, 128, 144, 0.3);
-                color: #0D2137;
-            }
-            .input-custom:focus {
-                border-color: #02C39A;
-                box-shadow: 0 0 0 3px rgba(2, 195, 154, 0.3);
-            }
-            .btn-primary {
-                background: linear-gradient(to right, #028090, #02C39A);
-                transition: all 0.3s ease;
-            }
-            .btn-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 20px -10px rgba(2, 195, 154, 0.7);
-            }
-        </style>
-    </head>
+        </head>
     <body class="text-white antialiased min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
         
         <div class="mb-8 text-center animate-bounce-slow">

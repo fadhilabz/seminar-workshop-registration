@@ -1,123 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Kelola Sertifikat Admin')
 @section('content')
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#121d20",
-                        "on-error": "#ffffff",
-                        "inverse-surface": "#273235",
-                        "primary-container": "#0d2137",
-                        "on-error-container": "#93000a",
-                        "tertiary-container": "#00261c",
-                        "primary": "#000917",
-                        "surface-container-highest": "#d9e5e8",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "inverse-on-surface": "#e7f3f7",
-                        "tertiary-fixed": "#65fbcf",
-                        "surface-container": "#e4f0f4",
-                        "on-tertiary": "#ffffff",
-                        "inverse-primary": "#b5c8e5",
-                        "surface-dim": "#d0dce0",
-                        "on-tertiary-fixed": "#002117",
-                        "secondary-container": "#92edff",
-                        "background": "#f0fbff",
-                        "on-primary-container": "#7689a4",
-                        "surface-container-low": "#eaf6fa",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "on-primary": "#ffffff",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "outline": "#74777d",
-                        "on-surface-variant": "#44474d",
-                        "secondary": "#006876",
-                        "error": "#ba1a1a",
-                        "on-secondary-container": "#006d7b",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-bright": "#f0fbff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "surface": "#f0fbff",
-                        "on-tertiary-container": "#009a79",
-                        "on-secondary-fixed": "#001f24",
-                        "on-primary-fixed": "#081c32",
-                        "primary-fixed-dim": "#b5c8e5",
-                        "surface-tint": "#4d6079",
-                        "error-container": "#ffdad6",
-                        "secondary-fixed": "#9eefff",
-                        "on-primary-fixed-variant": "#364860",
-                        "tertiary": "#000c07",
-                        "surface-container-high": "#deeaee",
-                        "outline-variant": "#c4c6cd",
-                        "surface-variant": "#d9e5e8",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#d2e4ff",
-                        "on-background": "#121d20"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-desktop": "48px",
-                        "container-max": "1280px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "margin-mobile": "16px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Montserrat"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .active-tab {
-            background-color: #92edff;
-            color: #006d7b;
-            font-weight: 700;
-            border-radius: 0.5rem;
-        }
-        .btn-hover-effect {
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-        .btn-hover-effect:hover {
-            transform: scale(0.98);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 12px rgba(13, 33, 55, 0.05);
-        }
-    </style>
 <div class="bg-background font-body-md text-on-surface min-h-screen flex">
 <!-- SideNavBar Anchor -->
 <aside class="h-full w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col p-6 gap-4 z-40">
@@ -432,24 +318,5 @@
 </div>
 </footer>
 </main>
-<script>
-        // Simple interactive feedback for generate buttons
-        document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if(this.textContent.trim() === 'Generate Sertifikat') {
-                    const originalText = this.innerHTML;
-                    this.disabled = true;
-                    this.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">autorenew</span> Processing...';
-                    this.classList.add('opacity-70');
-                    
-                    setTimeout(() => {
-                        this.innerHTML = '<span class="material-symbols-outlined text-sm">check_circle</span> Terbit!';
-                        this.classList.remove('bg-[#02C39A]');
-                        this.classList.add('bg-on-tertiary-container/20', 'text-on-tertiary-container');
-                    }, 1500);
-                }
-            });
-        });
-    </script>
 </div>
 @endsection

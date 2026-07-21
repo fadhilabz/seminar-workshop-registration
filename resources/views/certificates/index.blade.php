@@ -1,125 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Sertifikat Saya')
 @section('content')
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#121d20",
-                        "on-error": "#ffffff",
-                        "inverse-surface": "#273235",
-                        "primary-container": "#0d2137",
-                        "on-error-container": "#93000a",
-                        "tertiary-container": "#00261c",
-                        "primary": "#000917",
-                        "surface-container-highest": "#d9e5e8",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "inverse-on-surface": "#e7f3f7",
-                        "tertiary-fixed": "#65fbcf",
-                        "surface-container": "#e4f0f4",
-                        "on-tertiary": "#ffffff",
-                        "inverse-primary": "#b5c8e5",
-                        "surface-dim": "#d0dce0",
-                        "on-tertiary-fixed": "#002117",
-                        "secondary-container": "#92edff",
-                        "background": "#f0fbff",
-                        "on-primary-container": "#7689a4",
-                        "surface-container-low": "#eaf6fa",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "on-primary": "#ffffff",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "outline": "#74777d",
-                        "on-surface-variant": "#44474d",
-                        "secondary": "#006876",
-                        "error": "#ba1a1a",
-                        "on-secondary-container": "#006d7b",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-bright": "#f0fbff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "surface": "#f0fbff",
-                        "on-tertiary-container": "#009a79",
-                        "on-secondary-fixed": "#001f24",
-                        "on-primary-fixed": "#081c32",
-                        "primary-fixed-dim": "#b5c8e5",
-                        "surface-tint": "#4d6079",
-                        "error-container": "#ffdad6",
-                        "secondary-fixed": "#9eefff",
-                        "on-primary-fixed-variant": "#364860",
-                        "tertiary": "#000c07",
-                        "surface-container-high": "#deeaee",
-                        "outline-variant": "#c4c6cd",
-                        "surface-variant": "#d9e5e8",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#d2e4ff",
-                        "on-background": "#121d20"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-desktop": "48px",
-                        "container-max": "1280px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "margin-mobile": "16px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Montserrat"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        .card-hover {
-            transition: all 0.2s ease-in-out;
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -10px rgba(0, 9, 23, 0.15);
-        }
-    </style>
 <div class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
 <!-- Top Navigation Bar -->
 <header class="fixed top-0 w-full z-50 bg-primary shadow-sm">
@@ -352,19 +236,5 @@
 </div>
 </div>
 </footer>
-<script>
-        // Micro-interactions and subtle effects
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
-            });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
-            });
-        });
-    </script>
 </div>
 @endsection

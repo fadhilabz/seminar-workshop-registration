@@ -1,3 +1,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-navy: #0D2137;
+  --color-teal: #028090;
+  --color-seafoam: #02C39A;
+  --color-light: #E8F4F8;
+}
+
+@layer components {
+  .btn-primary { @apply bg-[#028090] text-white rounded-lg px-4 py-2 font-medium hover:opacity-90 transition; }
+  .btn-outline { @apply border border-[#028090] text-[#02C39A] rounded-lg px-4 py-2 font-medium hover:bg-[#028090] hover:text-white transition; }
+  .card { @apply rounded-xl shadow-md hover:shadow-lg transition bg-white; }
+  .badge-seminar { @apply bg-[#E1F5EE] text-[#0F6E56] px-3 py-1 rounded-full text-sm font-medium; }
+  .badge-workshop { @apply bg-[#E6F1FB] text-[#185FA5] px-3 py-1 rounded-full text-sm font-medium; }
+  .section-padding { @apply py-16 px-6; }
+  .nav-link { @apply text-[#A8C8D8] hover:text-white text-sm transition; }
+  .nav-link-active { @apply text-white font-semibold text-sm; }
+
+  /* Added from about.blade.php */
+  .bento-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(13, 33, 55, 0.08);
+  }
+
+  /* Added from events/index.blade.php */
+  .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(209, 228, 235, 0.5); }
+  .shadow-soft { box-shadow: 0 12px 24px -10px rgba(13, 33, 55, 0.05); }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(13, 33, 55, 0.1); }
+  .transition-standard { transition: all 200ms ease-in-out; }
+  .sticky-card { top: 100px; }
+}
+
+@layer base {
+  body { background-color: #f0fbff; font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  
+  /* Added from layouts/guest.blade.php */
+  body.auth-page {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0D2137 0%, #028090 100%);
+      background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Added from layouts/guest.blade.php */
+  .glass-panel {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  .input-custom {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(2, 128, 144, 0.3);
+      color: #0D2137;
+  }
+  .input-custom:focus {
+      border-color: #02C39A;
+      box-shadow: 0 0 0 3px rgba(2, 195, 154, 0.3);
+  }
+  .btn-primary {
+      background: linear-gradient(to right, #028090, #02C39A);
+      transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px rgba(2, 195, 154, 0.7);
+  }
+}

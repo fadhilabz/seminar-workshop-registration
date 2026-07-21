@@ -18,27 +18,27 @@
         <div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
             <a
                 class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors"
-                href="#"
+                href="{{ url('/') }}"
                 >Home</a
             >
             <a
                 class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors"
-                href="#"
+                href="{{ url('/events') }}"
                 >Acara</a
             >
             <a
                 class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors"
-                href="#"
+                href="{{ url('/#about') }}"
                 >Tentang</a
             >
             <a
                 class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors"
-                href="#"
+                href="{{ url('/privacy') }}"
                 >Privacy Policy</a
             >
             <a
                 class="font-body-md text-body-md text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors"
-                href="#"
+                href="{{ url('/terms') }}"
                 >Terms of Service</a
             >
         </div>

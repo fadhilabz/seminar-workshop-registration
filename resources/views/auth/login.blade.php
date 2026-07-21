@@ -4,118 +4,9 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Login - SeminarKu</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface": "#121d20",
-                    "on-error": "#ffffff",
-                    "surface-bright": "#f0fbff",
-                    "surface-container-low": "#eaf6fa",
-                    "tertiary-fixed": "#65fbcf",
-                    "outline-variant": "#c4c6cd",
-                    "surface-container": "#e4f0f4",
-                    "on-tertiary": "#ffffff",
-                    "on-surface-variant": "#44474d",
-                    "surface": "#f0fbff",
-                    "on-tertiary-fixed": "#002117",
-                    "inverse-surface": "#273235",
-                    "on-secondary-container": "#006d7b",
-                    "on-primary": "#ffffff",
-                    "error": "#ba1a1a",
-                    "secondary-fixed": "#9eefff",
-                    "tertiary-fixed-dim": "#40deb3",
-                    "surface-container-high": "#deeaee",
-                    "on-error-container": "#93000a",
-                    "on-tertiary-fixed-variant": "#00513e",
-                    "on-secondary-fixed-variant": "#004e59",
-                    "error-container": "#ffdad6",
-                    "surface-variant": "#d9e5e8",
-                    "surface-container-highest": "#d9e5e8",
-                    "secondary": "#006876",
-                    "on-background": "#121d20",
-                    "secondary-fixed-dim": "#77d4e5",
-                    "outline": "#74777d",
-                    "background": "#f0fbff",
-                    "on-tertiary-container": "#009a79",
-                    "primary-container": "#0d2137",
-                    "on-secondary-fixed": "#001f24",
-                    "inverse-on-surface": "#e7f3f7",
-                    "inverse-primary": "#b5c8e5",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed": "#d2e4ff",
-                    "on-primary-container": "#7689a4",
-                    "tertiary": "#000c07",
-                    "primary-fixed-dim": "#b5c8e5",
-                    "surface-dim": "#d0dce0",
-                    "on-primary-fixed-variant": "#364860",
-                    "surface-tint": "#4d6079",
-                    "on-primary-fixed": "#081c32",
-                    "secondary-container": "#92edff",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-container": "#00261c",
-                    "primary": "#000917"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-desktop": "48px",
-                    "gutter": "24px",
-                    "margin-mobile": "16px",
-                    "base": "8px",
-                    "container-max": "1280px"
-            },
-            "fontFamily": {
-                    "body-md": ["Montserrat"],
-                    "label-md": ["Montserrat"],
-                    "label-lg": ["Montserrat"],
-                    "headline-xl": ["Montserrat"],
-                    "headline-lg-mobile": ["Montserrat"],
-                    "body-lg": ["Montserrat"],
-                    "headline-md": ["Montserrat"],
-                    "headline-lg": ["Montserrat"]
-            },
-            "fontSize": {
-                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
-    </script>
-    <style>
-        body {
-            background-color: #E8F4F8; /* Base Level 0 */
-            font-family: 'Montserrat', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .login-card {
-            box-shadow: 0 12px 24px -4px rgba(13, 33, 55, 0.05); /* 5% Opacity Navy Shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .login-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px -4px rgba(13, 33, 55, 0.1); /* 10% Opacity Navy Shadow */
-        }
-    </style>
-</head>
+    </head>
 <body class="min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- Header / Navigation (Suppressed for focused Login task) -->
 <header class="w-full flex justify-center py-base">
@@ -208,29 +99,5 @@
     </div>
 </main>
 
-<script>
-    // Micro-interaction for password toggle
-    document.querySelectorAll('button[type="button"]').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const input = this.previousElementSibling;
-            const icon = this.querySelector('.material-symbols-outlined');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.textContent = 'visibility_off';
-            } else {
-                input.type = 'password';
-                icon.textContent = 'visibility';
-            }
-        });
-    });
-
-    // Simple form validation feedback
-    const loginForm = document.querySelector('form');
-    loginForm.addEventListener('submit', function(e) {
-        const btn = this.querySelector('button[type="submit"]');
-        btn.textContent = 'Sedang masuk...';
-        btn.classList.add('opacity-70', 'cursor-not-allowed');
-    });
-</script>
 </body>
 </html>

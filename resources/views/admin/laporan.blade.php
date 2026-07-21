@@ -1,126 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Laporan Statistik')
 @section('content')
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "inverse-surface": "#273235",
-                        "primary-fixed": "#d2e4ff",
-                        "on-primary-fixed": "#081c32",
-                        "surface-container-high": "#deeaee",
-                        "on-secondary": "#ffffff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "outline": "#74777d",
-                        "surface-container": "#e4f0f4",
-                        "primary-container": "#0d2137",
-                        "primary": "#000917",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "secondary": "#006876",
-                        "secondary-fixed": "#9eefff",
-                        "surface-bright": "#f0fbff",
-                        "surface-tint": "#4d6079",
-                        "on-error": "#ffffff",
-                        "inverse-primary": "#b5c8e5",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-variant": "#d9e5e8",
-                        "on-secondary-fixed": "#001f24",
-                        "tertiary": "#000c07",
-                        "on-tertiary": "#ffffff",
-                        "on-surface": "#121d20",
-                        "background": "#f0fbff",
-                        "on-tertiary-fixed": "#002117",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "error-container": "#ffdad6",
-                        "on-background": "#121d20",
-                        "on-surface-variant": "#44474d",
-                        "on-tertiary-container": "#009a79",
-                        "secondary-container": "#92edff",
-                        "outline-variant": "#c4c6cd",
-                        "surface-dim": "#d0dce0",
-                        "on-primary-container": "#7689a4",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "primary-fixed-dim": "#b5c8e5",
-                        "inverse-on-surface": "#e7f3f7",
-                        "surface": "#f0fbff",
-                        "on-error-container": "#93000a",
-                        "on-primary-fixed-variant": "#364860",
-                        "error": "#ba1a1a",
-                        "tertiary-fixed": "#65fbcf",
-                        "on-secondary-container": "#006d7b",
-                        "surface-container-highest": "#d9e5e8",
-                        "tertiary-container": "#00261c",
-                        "surface-container-low": "#eaf6fa"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-mobile": "16px",
-                        "gutter": "24px",
-                        "container-max": "1280px",
-                        "base": "8px",
-                        "margin-desktop": "48px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "body-md": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "label-md": ["Montserrat"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f0fbff;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .card-elevation {
-            box-shadow: 0 12px 24px -10px rgba(13, 33, 55, 0.05);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .card-elevation:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px -12px rgba(13, 33, 55, 0.1);
-        }
-        .bar-animate {
-            animation: growUp 1s ease-out forwards;
-            transform-origin: bottom;
-        }
-        @keyframes growUp {
-            from { transform: scaleY(0); }
-            to { transform: scaleY(1); }
-        }
-    </style>
 <div class="flex min-h-screen">
 <!-- SideNavBar (Shared Component) -->
 <aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container shadow-xl flex flex-col py-6 z-40 border-r border-outline-variant/10">
@@ -405,27 +288,5 @@
 <div class="font-body-md text-body-md opacity-80">© 2024 SeminarKu. All rights reserved.</div>
 </footer>
 </main>
-<script>
-        // Micro-interactions and accessibility
-        document.querySelectorAll('a, button').forEach(elem => {
-            elem.addEventListener('mousedown', () => {
-                elem.style.transform = 'scale(0.98)';
-            });
-            elem.addEventListener('mouseup', () => {
-                elem.style.transform = '';
-            });
-            elem.addEventListener('mouseleave', () => {
-                elem.style.transform = '';
-            });
-        });
-
-        // Simple animation for the simulated bar chart on load
-        window.addEventListener('DOMContentLoaded', () => {
-            const bars = document.querySelectorAll('.bar-animate');
-            bars.forEach((bar, index) => {
-                bar.style.animationDelay = `${index * 0.1}s`;
-            });
-        });
-    </script>
 </div>
 @endsection

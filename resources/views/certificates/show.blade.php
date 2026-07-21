@@ -1,111 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Preview Sertifikat')
 @section('content')
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface": "#121d20",
-                    "on-error": "#ffffff",
-                    "inverse-surface": "#273235",
-                    "primary-container": "#0d2137",
-                    "on-error-container": "#93000a",
-                    "tertiary-container": "#00261c",
-                    "primary": "#000917",
-                    "surface-container-highest": "#d9e5e8",
-                    "on-tertiary-fixed-variant": "#00513e",
-                    "inverse-on-surface": "#e7f3f7",
-                    "tertiary-fixed": "#65fbcf",
-                    "surface-container": "#e4f0f4",
-                    "on-tertiary": "#ffffff",
-                    "inverse-primary": "#b5c8e5",
-                    "surface-dim": "#d0dce0",
-                    "on-tertiary-fixed": "#002117",
-                    "secondary-container": "#92edff",
-                    "background": "#f0fbff",
-                    "on-primary-container": "#7689a4",
-                    "surface-container-low": "#eaf6fa",
-                    "on-secondary-fixed-variant": "#004e59",
-                    "on-primary": "#ffffff",
-                    "tertiary-fixed-dim": "#40deb3",
-                    "outline": "#74777d",
-                    "on-surface-variant": "#44474d",
-                    "secondary": "#006876",
-                    "error": "#ba1a1a",
-                    "on-secondary-container": "#006d7b",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-bright": "#f0fbff",
-                    "secondary-fixed-dim": "#77d4e5",
-                    "surface": "#f0fbff",
-                    "on-tertiary-container": "#009a79",
-                    "on-secondary-fixed": "#001f24",
-                    "on-primary-fixed": "#081c32",
-                    "primary-fixed-dim": "#b5c8e5",
-                    "surface-tint": "#4d6079",
-                    "error-container": "#ffdad6",
-                    "secondary-fixed": "#9eefff",
-                    "on-primary-fixed-variant": "#364860",
-                    "tertiary": "#000c07",
-                    "surface-container-high": "#deeaee",
-                    "outline-variant": "#c4c6cd",
-                    "surface-variant": "#d9e5e8",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed": "#d2e4ff",
-                    "on-background": "#121d20",
-                    "brand-navy": "#0D2137",
-                    "brand-teal": "#028090",
-                    "brand-seafoam": "#02C39A"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-desktop": "48px",
-                    "container-max": "1280px",
-                    "base": "8px",
-                    "gutter": "24px",
-                    "margin-mobile": "16px"
-            },
-            "fontFamily": {
-                    "label-md": ["Montserrat"],
-                    "headline-md": ["Montserrat"],
-                    "body-lg": ["Montserrat"],
-                    "label-lg": ["Montserrat"],
-                    "headline-xl": ["Montserrat"],
-                    "headline-lg": ["Montserrat"],
-                    "body-md": ["Montserrat"],
-                    "serif-elegant": ["'Playfair Display'", "serif"]
-            }
-          }
-        }
-      }
-    </script>
-<style>
-        .certificate-watermark {
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(2, 128, 144, 0.03) 100px, rgba(2, 128, 144, 0.03) 200px);
-            pointer-events: none;
-        }
-        .watermark-text {
-            transform: rotate(-45deg);
-            opacity: 0.05;
-            user-select: none;
-        }
-        .btn-hover-effect {
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-hover-effect:active {
-            transform: scale(0.98);
-        }
-    </style>
 <div class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
 <!-- TopAppBar Mapping -->
 <header class="fixed top-0 w-full z-50 bg-brand-navy shadow-sm">
@@ -256,15 +154,5 @@
 </div>
 </footer>
 <!-- Simple Interactivity -->
-<script>
-        document.querySelectorAll('.btn-hover-effect').forEach(button => {
-            button.addEventListener('mouseover', () => {
-                button.style.transform = 'translateY(-2px)';
-            });
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
 </div>
 @endsection

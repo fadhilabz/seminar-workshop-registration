@@ -3,115 +3,9 @@
 @section('title', 'Riwayat Pendaftaran Saya - SeminarKu')
 
 @section('content')
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary": "#000c07",
-                        "secondary-container": "#92edff",
-                        "outline": "#74777d",
-                        "on-tertiary": "#ffffff",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "tertiary-fixed": "#65fbcf",
-                        "surface-container-low": "#eaf6fa",
-                        "primary-container": "#0d2137",
-                        "on-error": "#ffffff",
-                        "primary": "#000917",
-                        "error": "#ba1a1a",
-                        "surface-container-highest": "#d9e5e8",
-                        "outline-variant": "#c4c6cd",
-                        "on-surface-variant": "#44474d",
-                        "on-primary-fixed": "#081c32",
-                        "inverse-surface": "#273235",
-                        "surface": "#f0fbff",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-fixed": "#9eefff",
-                        "background": "#f0fbff",
-                        "surface-bright": "#f0fbff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "inverse-on-surface": "#e7f3f7",
-                        "secondary": "#006876",
-                        "on-primary-container": "#7689a4",
-                        "tertiary-container": "#00261c",
-                        "surface-container": "#e4f0f4",
-                        "primary-fixed": "#d2e4ff",
-                        "on-secondary-fixed": "#001f24",
-                        "surface-tint": "#4d6079",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "surface-dim": "#d0dce0",
-                        "surface-variant": "#d9e5e8",
-                        "primary-fixed-dim": "#b5c8e5",
-                        "on-secondary-container": "#006d7b",
-                        "error-container": "#ffdad6",
-                        "on-surface": "#121d20",
-                        "on-primary": "#ffffff",
-                        "on-background": "#121d20",
-                        "on-tertiary-container": "#009a79",
-                        "on-tertiary-fixed": "#002117",
-                        "surface-container-high": "#deeaee",
-                        "inverse-primary": "#b5c8e5",
-                        "on-secondary": "#ffffff",
-                        "on-primary-fixed-variant": "#364860",
-                        "on-error-container": "#93000a"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-mobile": "16px",
-                        "container-max": "1280px",
-                        "gutter": "24px",
-                        "base": "8px",
-                        "margin-desktop": "48px"
-                    },
-                    "fontFamily": {
-                        "label-lg": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "label-md": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        body { font-family: 'Montserrat', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(13, 33, 55, 0.08);
-        }
-    </style>
-
-
 <!-- TopNavBar -->
 <header class="bg-primary-container docked full-width top-0 shadow-sm z-50 sticky">
 <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
@@ -270,32 +164,4 @@
             </div>
 </div>
 </footer>
-<script>
-        // Micro-interactions
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
-            });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
-            });
-        });
-
-        // Simple filter logic simulation
-        const tabs = document.querySelectorAll('.flex.flex-wrap.items-center.gap-4 button');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => {
-                    t.classList.remove('text-on-tertiary-container', 'border-b-2', 'border-on-tertiary-container');
-                    t.classList.add('text-on-surface-variant');
-                });
-                tab.classList.add('text-on-tertiary-container', 'border-b-2', 'border-on-tertiary-container');
-                tab.classList.remove('text-on-surface-variant');
-            });
-        });
-    </script>
-
 @endsection

@@ -20,12 +20,12 @@
                 bisnis, dan desain melalui platform SeminarKu.
             </p>
             <div class="flex flex-wrap gap-4">
-                <button class="bg-[#02C39A] text-primary px-8 py-4 rounded-xl font-label-lg text-label-lg hover:opacity-90 transition-all scale-100 active:scale-95 shadow-lg">
+                <a href="{{ route('events.index') }}" class="inline-block bg-[#02C39A] text-primary px-8 py-4 rounded-xl font-label-lg text-label-lg hover:opacity-90 transition-all scale-100 active:scale-95 shadow-lg">
                     Lihat Acara
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-label-lg text-label-lg hover:bg-white/10 transition-all scale-100 active:scale-95">
+                </a>
+                <a href="{{ route('register') }}" class="inline-block border-2 border-white text-white px-8 py-4 rounded-xl font-label-lg text-label-lg hover:bg-white/10 transition-all scale-100 active:scale-95">
                     Daftar Sekarang
-                </button>
+                </a>
             </div>
         </div>
         <div class="hidden md:block">
@@ -52,7 +52,7 @@
                     Temukan pengalaman belajar baru yang inspiratif
                 </p>
             </div>
-            <a class="hidden md:flex items-center gap-2 text-on-secondary-container font-label-lg text-label-lg group" href="#">
+            <a class="hidden md:flex items-center gap-2 text-on-secondary-container font-label-lg text-label-lg group" href="{{ route('events.index') }}">
                 Lihat Semua
                 <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
@@ -90,9 +90,9 @@
                     </div>
                     <div class="pt-4 flex justify-between items-center border-t border-outline-variant/20">
                         <span class="font-headline-md text-on-tertiary-container">Rp 150.000</span>
-                        <button class="bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
+                        <a href="{{ route('events.show', 1) }}" class="inline-block bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
                             Daftar
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -128,9 +128,9 @@
                     </div>
                     <div class="pt-4 flex justify-between items-center border-t border-outline-variant/20">
                         <span class="font-headline-md text-on-tertiary-container">Rp 250.000</span>
-                        <button class="bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
+                        <a href="{{ route('events.show', 2) }}" class="inline-block bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
                             Daftar
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -166,9 +166,9 @@
                     </div>
                     <div class="pt-4 flex justify-between items-center border-t border-outline-variant/20">
                         <span class="font-headline-md text-on-tertiary-container">Rp 200.000</span>
-                        <button class="bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
+                        <a href="{{ route('events.show', 3) }}" class="inline-block bg-secondary-container text-on-secondary-fixed-variant px-4 py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary transition-colors">
                             Daftar
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

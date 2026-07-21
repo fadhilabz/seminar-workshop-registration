@@ -3,132 +3,17 @@
 @section('title', 'Detail Acara')
 
 @section('content')
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed-dim": "#b5c8e5",
-                        "surface-dim": "#d0dce0",
-                        "tertiary-fixed": "#65fbcf",
-                        "surface-bright": "#f0fbff",
-                        "inverse-surface": "#273235",
-                        "primary": "#000917",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "on-surface-variant": "#44474d",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-container": "#009a79",
-                        "surface-container-low": "#eaf6fa",
-                        "tertiary-container": "#00261c",
-                        "on-tertiary": "#ffffff",
-                        "surface-variant": "#d9e5e8",
-                        "on-secondary-fixed": "#001f24",
-                        "on-error-container": "#93000a",
-                        "surface-tint": "#4d6079",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "inverse-primary": "#b5c8e5",
-                        "secondary": "#006876",
-                        "surface-container": "#e4f0f4",
-                        "on-tertiary-fixed": "#002117",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "on-secondary-container": "#006d7b",
-                        "secondary-container": "#92edff",
-                        "on-primary-container": "#7689a4",
-                        "surface-container-highest": "#d9e5e8",
-                        "background": "#f0fbff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "on-surface": "#121d20",
-                        "surface-container-high": "#deeaee",
-                        "secondary-fixed": "#9eefff",
-                        "on-primary-fixed-variant": "#364860",
-                        "inverse-on-surface": "#e7f3f7",
-                        "error": "#ba1a1a",
-                        "primary-fixed": "#d2e4ff",
-                        "outline-variant": "#c4c6cd",
-                        "on-error": "#ffffff",
-                        "surface-container-lowest": "#ffffff",
-                        "on-background": "#121d20",
-                        "outline": "#74777d",
-                        "primary-container": "#0d2137",
-                        "tertiary": "#000c07",
-                        "surface": "#f0fbff",
-                        "on-primary-fixed": "#081c32",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "margin-mobile": "16px",
-                        "margin-desktop": "48px",
-                        "base": "8px",
-                        "container-max": "1280px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "label-md": ["Montserrat"],
-                        "body-md": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "headline-lg": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .sticky-card {
-            top: 100px;
-        }
-    </style>
 
 
-<!-- TopNavBar -->
-<nav class="bg-primary-container docked full-width top-0 sticky z-50 shadow-sm h-20 flex items-center">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
-<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container">
-                SeminarKu
-            </div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route('home') }}">Home</a>
-<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route('events.index') }}">Acara</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
-</div>
-<div class="flex items-center gap-4">
-<a href="{{ route('login') }}" class="px-6 py-2 rounded-full font-label-lg text-label-lg text-on-primary-container hover:bg-primary/10 transition-all duration-200 scale-95 active:scale-90">Login</a>
-<a href="{{ route('register') }}" class="px-6 py-2 rounded-full font-label-lg text-label-lg bg-on-tertiary-container text-white hover:opacity-90 transition-all duration-200 scale-95 active:scale-90">Register</a>
-</div>
-</div>
-</nav>
-<!-- Main Content -->
+
+
 <main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="mb-4">
+    <a href="{{ route('events.index') }}" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-colors font-label-lg">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Kembali ke Acara
+    </a>
+</div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
 <!-- Left Column: Content (60%) -->
 <div class="lg:col-span-7 space-y-8">
@@ -238,10 +123,10 @@
 </div>
 </div>
 <div class="space-y-3">
-<button class="w-full py-4 bg-on-tertiary-container text-white rounded-2xl font-label-lg text-headline-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all duration-200">
+<a href="{{ route('register') }}" class="w-full py-4 bg-on-tertiary-container text-white rounded-2xl font-label-lg text-headline-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all duration-200">
                             Daftar Sekarang
                             <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+</a>
 <p class="text-center text-outline text-label-md">
                             Transaksi aman &amp; terverifikasi oleh SeminarKu
                         </p>
@@ -331,46 +216,7 @@
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-primary-container full-width mt-24">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
-<div class="mb-8 md:mb-0">
-<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container mb-4">SeminarKu</div>
-<p class="text-on-primary-container font-body-md text-body-md max-w-xs">Platform terpercaya untuk menemukan dan mengikuti seminar berkualitas di seluruh Indonesia.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
-<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="{{ route('home') }}">Home</a>
-<a class="text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="{{ route('events.index') }}">Acara</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Tentang</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container hover:underline transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
-</div>
-<div class="text-on-primary-container font-body-md text-body-md opacity-70">
-                © 2024 SeminarKu. All rights reserved.
-            </div>
-</div>
-</footer>
-<script>
-        // Micro-interactions for registration card scroll effect
-        window.addEventListener('scroll', () => {
-            const card = document.querySelector('.sticky-card');
-            if (window.scrollY > 100) {
-                card.classList.add('shadow-2xl');
-            } else {
-                card.classList.remove('shadow-2xl');
-            }
-        });
 
-        // Simple animation on load for progress bar
-        document.addEventListener('DOMContentLoaded', () => {
-            const progressBar = document.querySelector('.bg-on-tertiary-container');
-            if (progressBar) {
-                progressBar.style.width = '0%';
-                setTimeout(() => {
-                    progressBar.style.width = '77%';
-                }, 500);
-            }
-        });
-    </script>
+
 
 @endsection

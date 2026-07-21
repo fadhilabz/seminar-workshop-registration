@@ -6,10 +6,6 @@
     </x-slot>
 
     <!-- Inject custom styles for the background -->
-    <style>
-        header { background-color: #0D2137 !important; }
-    </style>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col gap-6">
             
@@ -62,7 +58,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Seminar AI 2026</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <a href="{{ route('events.show', 1) }}" class="text-blue-600 hover:text-blue-800 hover:underline">Seminar AI 2026</a>
+                                    </td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">12 Jul 2026</td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                         <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -72,7 +70,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">Workshop Web Dev</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <a href="{{ route('events.show', 2) }}" class="text-blue-600 hover:text-blue-800 hover:underline">Workshop Web Dev</a>
+                                    </td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">15 Jul 2026</td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                         <span class="relative inline-block px-3 py-1 font-semibold text-yellow-900 leading-tight">

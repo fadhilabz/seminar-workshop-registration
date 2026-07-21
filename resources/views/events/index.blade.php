@@ -3,122 +3,10 @@
 @section('title', 'Semua Acara')
 
 @section('content')
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed-dim": "#b5c8e5",
-                        "surface-dim": "#d0dce0",
-                        "tertiary-fixed": "#65fbcf",
-                        "surface-bright": "#f0fbff",
-                        "inverse-surface": "#273235",
-                        "primary": "#000917",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "on-surface-variant": "#44474d",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-container": "#009a79",
-                        "surface-container-low": "#eaf6fa",
-                        "tertiary-container": "#00261c",
-                        "on-tertiary": "#ffffff",
-                        "surface-variant": "#d9e5e8",
-                        "on-secondary-fixed": "#001f24",
-                        "on-error-container": "#93000a",
-                        "surface-tint": "#4d6079",
-                        "tertiary-fixed-dim": "#40deb3",
-                        "inverse-primary": "#b5c8e5",
-                        "secondary": "#006876",
-                        "surface-container": "#e4f0f4",
-                        "on-tertiary-fixed": "#002117",
-                        "on-tertiary-fixed-variant": "#00513e",
-                        "on-secondary-container": "#006d7b",
-                        "secondary-container": "#92edff",
-                        "on-primary-container": "#7689a4",
-                        "surface-container-highest": "#d9e5e8",
-                        "background": "#f0fbff",
-                        "secondary-fixed-dim": "#77d4e5",
-                        "on-surface": "#121d20",
-                        "surface-container-high": "#deeaee",
-                        "secondary-fixed": "#9eefff",
-                        "on-primary-fixed-variant": "#364860",
-                        "inverse-on-surface": "#e7f3f7",
-                        "error": "#ba1a1a",
-                        "primary-fixed": "#d2e4ff",
-                        "outline-variant": "#c4c6cd",
-                        "on-error": "#ffffff",
-                        "surface-container-lowest": "#ffffff",
-                        "on-background": "#121d20",
-                        "outline": "#74777d",
-                        "primary-container": "#0d2137",
-                        "tertiary": "#000c07",
-                        "surface": "#f0fbff",
-                        "on-primary-fixed": "#081c32",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "margin-mobile": "16px",
-                        "margin-desktop": "48px",
-                        "base": "8px",
-                        "container-max": "1280px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Montserrat"],
-                        "label-lg": ["Montserrat"],
-                        "label-md": ["Montserrat"],
-                        "body-md": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "headline-lg-mobile": ["Montserrat"],
-                        "headline-xl": ["Montserrat"],
-                        "headline-lg": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        body { background-color: #f0fbff; font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(209, 228, 235, 0.5); }
-        .shadow-soft { box-shadow: 0 12px 24px -10px rgba(13, 33, 55, 0.05); }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(13, 33, 55, 0.1); }
-        .transition-standard { transition: all 200ms ease-in-out; }
-    </style>
 
 
-<!-- Top Navigation Bar -->
-<nav class="bg-primary-container docked full-width top-0 shadow-sm sticky z-50">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
-<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container">SeminarKu</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="{{ route('home') }}">Home</a>
-<a class="text-on-tertiary-container font-bold border-b-2 border-on-tertiary-container pb-1 font-label-lg text-label-lg" href="{{ route('events.index') }}">Acara</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-colors font-label-lg text-label-lg" href="#">Tentang</a>
-</div>
-<div class="flex items-center gap-4">
-<a href="{{ route('login') }}" class="px-6 py-2 rounded-full border border-on-primary-container text-on-primary-container font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:bg-primary/10">Login</a>
-<a href="{{ route('register') }}" class="px-6 py-2 rounded-full bg-on-tertiary-container text-white font-label-lg text-label-lg scale-95 active:scale-90 transition-transform hover:brightness-110">Register</a>
-</div>
-</div>
-</nav>
+
+
 <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
 <!-- Header Section -->
 <header class="mb-12">
@@ -174,7 +62,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 250.000</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 1) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -198,7 +86,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 150.000</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 2) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -222,7 +110,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Gratis</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 3) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -246,7 +134,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 500.000</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 4) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -270,7 +158,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 75.000</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 5) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -294,7 +182,7 @@
 </div>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 350.000</span>
-<button class="px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</button>
+<a href="{{ route('events.show', 6) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
 </div>
 </div>
 </div>
@@ -314,47 +202,7 @@
 </button>
 </div>
 </main>
-<!-- Footer -->
-<footer class="bg-primary-container full-width border-t border-outline-variant/10">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
-<div class="mb-8 md:mb-0">
-<div class="font-headline-md text-headline-md font-bold text-on-tertiary-container mb-2">SeminarKu</div>
-<p class="font-body-md text-body-md text-on-primary-container max-w-xs text-center md:text-left">Platform pendaftaran seminar dan workshop terpercaya untuk masa depan cerah Anda.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="{{ route('home') }}">Home</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="{{ route('events.index') }}">Acara</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Tentang</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Privacy Policy</a>
-<a class="text-on-primary-container hover:text-on-tertiary-container transition-standard font-body-md text-body-md hover:underline" href="#">Terms of Service</a>
-</div>
-<div class="text-on-primary-container font-body-md text-body-md text-center md:text-right">
-                © 2024 SeminarKu. All rights reserved.
-            </div>
-</div>
-</footer>
-<script>
-        // Micro-interaction for filter chips
-        const filterButtons = document.querySelectorAll('.flex.items-center.gap-3 button');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => {
-                    b.classList.remove('bg-secondary', 'text-white');
-                    b.classList.add('bg-white', 'border', 'border-outline-variant', 'text-on-surface-variant');
-                });
-                btn.classList.add('bg-secondary', 'text-white');
-                btn.classList.remove('bg-white', 'border', 'border-outline-variant', 'text-on-surface-variant');
-            });
-        });
 
-        // Search highlight interaction
-        const searchInput = document.querySelector('input[type="text"]');
-        searchInput.addEventListener('focus', () => {
-            searchInput.parentElement.classList.add('scale-[1.01]');
-        });
-        searchInput.addEventListener('blur', () => {
-            searchInput.parentElement.classList.remove('scale-[1.01]');
-        });
-    </script>
+
 
 @endsection
