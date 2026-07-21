@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CategorySeeder::class,
             EventSeeder::class,
+            PaymentSeeder::class,
         ]);
 
         User::factory()->create([

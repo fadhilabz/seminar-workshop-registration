@@ -1,112 +1,153 @@
 @extends('layouts.admin')
+
+@section('title', 'Manajemen Role Pengguna')
+
 @section('content')
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
-            {{ __('Manajemen Role Pengguna') }}
-        </h2>
-    </x-slot>
-
-    <!-- Inject custom styles for the background -->
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col md:flex-row gap-6">
-            
-            <!-- Sidebar -->
-            <div class="w-full md:w-1/4">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-                        <h3 class="font-bold text-lg mb-4" style="color: #0D2137;">Menu Admin</h3>
-                        <ul class="space-y-2">
-                            <li><a href="{{ route('admin.dashboard') }}" class="block p-2 rounded hover:bg-gray-100" style="color: #028090;">Dashboard</a></li>
-                            <li><a href="#" class="block p-2 rounded hover:bg-gray-100" style="color: #028090;">Kelola Acara</a></li>
-                            <li><a href="#" class="block p-2 rounded hover:bg-gray-100" style="color: #028090;">Kelola Peserta</a></li>
-                            <li><a href="#" class="block p-2 rounded hover:bg-gray-100" style="color: #028090;">Verifikasi Bayar</a></li>
-                            <li><a href="{{ route('admin.role.index') }}" class="block p-2 rounded hover:bg-gray-100 bg-gray-100 font-semibold" style="color: #028090;">Manajemen Role</a></li>
-                            <li><a href="#" class="block p-2 rounded hover:bg-gray-100" style="color: #028090;">Laporan</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="w-full md:w-3/4">
-                
-                @if (session('success'))
-                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                        <span class="block sm:inline">{{ session('success') }}</span>
-                    </div>
-                @endif
-                
-                @if (session('error'))
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                        <span class="block sm:inline">{{ session('error') }}</span>
-                    </div>
-                @endif
-
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 overflow-x-auto">
-                        <table class="min-w-full leading-normal">
-                            <thead>
-                                <tr>
-                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">No</th>
-                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Nama</th>
-                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Email</th>
-                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Role Saat Ini</th>
-                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($users as $index => $user)
-                                    <tr>
-                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p class="text-gray-900 whitespace-no-wrap">{{ $index + 1 }}</p>
-                                        </td>
-                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p class="text-gray-900 whitespace-no-wrap">{{ $user->name }}</p>
-                                        </td>
-                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p class="text-gray-900 whitespace-no-wrap">{{ $user->email }}</p>
-                                        </td>
-                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            @if($user->role === 'admin')
-                                                <span class="relative inline-block px-3 py-1 font-semibold text-white leading-tight">
-                                                    <span aria-hidden class="absolute inset-0 rounded-full" style="background-color: #028090;"></span>
-                                                    <span class="relative">Admin</span>
-                                                </span>
-                                            @else
-                                                <span class="relative inline-block px-3 py-1 font-semibold text-gray-800 leading-tight">
-                                                    <span aria-hidden class="absolute inset-0 bg-gray-200 rounded-full"></span>
-                                                    <span class="relative">User</span>
-                                                </span>
-                                            @endif
-                                        </td>
-                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <form action="{{ route('admin.role.update', $user) }}" method="POST" class="flex items-center space-x-2">
-                                                @csrf
-                                                @method('PATCH')
-                                                <select name="role" class="block w-full mt-1 text-sm rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" {{ auth()->id() === $user->id ? 'disabled' : '' }}>
-                                                    <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
-                                                    <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
-                                                </select>
-                                                
-                                                @if(auth()->id() === $user->id)
-                                                    <button type="button" disabled class="px-4 py-2 bg-gray-400 text-white rounded text-sm cursor-not-allowed">
-                                                        Ubah
-                                                    </button>
-                                                @else
-                                                    <button type="submit" class="px-4 py-2 text-white rounded text-sm hover:opacity-90" style="background-color: #0D2137;">
-                                                        Ubah
-                                                    </button>
-                                                @endif
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+<div class="w-full space-y-6">
+    <!-- Subheader -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <p class="text-sm text-on-surface-variant">Kelola role dan hak akses pengguna sistem (Admin / User).</p>
     </div>
+
+    <!-- Flash Messages -->
+    @if (session('success'))
+        <div class="bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg p-4 rounded-xl shadow-md flex items-center gap-3 border border-on-tertiary-container/20" id="flash-message">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span>{{ session('success') }}</span>
+            <button class="ml-auto" onclick="document.getElementById('flash-message').remove()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="bg-error-container text-error p-4 rounded-xl shadow-md flex items-center gap-3 border border-error/20" id="flash-message-error">
+            <span class="material-symbols-outlined">error</span>
+            <span>{{ session('error') }}</span>
+            <button class="ml-auto" onclick="document.getElementById('flash-message-error').remove()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+    @endif
+
+    <!-- Table / Mobile Cards Container -->
+    <div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden border border-outline-variant/30 w-full">
+        
+        <!-- Desktop Table View (visible on md+) -->
+        <div class="hidden md:block w-full overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                    <tr class="bg-surface-container-low border-b border-outline-variant/50 text-xs font-semibold text-primary uppercase tracking-wider">
+                        <th class="px-4 py-3 text-center w-12">No</th>
+                        <th class="px-4 py-3 whitespace-nowrap">Nama</th>
+                        <th class="px-4 py-3 whitespace-nowrap">Email</th>
+                        <th class="px-4 py-3 whitespace-nowrap">Role Saat Ini</th>
+                        <th class="px-4 py-3 whitespace-nowrap">Aksi Ubah Role</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/20 text-on-surface">
+                    @forelse ($users as $index => $user)
+                        <tr class="hover:bg-surface-container-low/50 transition-colors">
+                            <td class="px-4 py-3 text-center font-medium text-xs text-on-surface-variant">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap font-semibold text-xs text-primary">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-7 h-7 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container font-bold text-xs">
+                                        {{ strtoupper(substr($user->name, 0, 2)) }}
+                                    </div>
+                                    <span>{{ $user->name }}</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-xs text-on-surface-variant">{{ $user->email }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap text-xs">
+                                @if ($user->role === 'admin')
+                                    <span class="px-2.5 py-0.5 rounded-full bg-on-tertiary-container text-white font-semibold text-[11px]">
+                                        Admin
+                                    </span>
+                                @else
+                                    <span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-medium text-[11px]">
+                                        User
+                                    </span>
+                                @endif
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-xs">
+                                <form action="{{ route('admin.role.update', $user) }}" method="POST" class="flex items-center gap-2 max-w-xs">
+                                    @csrf
+                                    @method('PATCH')
+                                    <select name="role" class="px-3 py-1.5 bg-white border border-outline-variant rounded-lg text-xs font-medium focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" {{ auth()->id() === $user->id ? 'disabled' : '' }}>
+                                        <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
+                                        <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
+                                    </select>
+
+                                    @if (auth()->id() === $user->id)
+                                        <button type="button" disabled class="px-3 py-1.5 bg-outline/20 text-outline text-xs rounded-lg font-medium cursor-not-allowed">
+                                            Ubah
+                                        </button>
+                                    @else
+                                        <button type="submit" class="px-3 py-1.5 bg-primary-container text-white text-xs rounded-lg font-medium hover:brightness-110 active:scale-95 transition-all shadow-sm">
+                                            Ubah
+                                        </button>
+                                    @endif
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5" class="px-4 py-8 text-center text-on-surface-variant text-sm">
+                                Belum ada pengguna terdaftar.
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mobile Card View (visible on mobile < md) -->
+        <div class="block md:hidden p-4 space-y-4">
+            @forelse ($users as $index => $user)
+                <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 shadow-sm flex flex-col gap-3">
+                    <div class="flex items-center justify-between gap-2 border-b border-outline-variant/20 pb-2">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container font-bold text-xs">
+                                {{ strtoupper(substr($user->name, 0, 2)) }}
+                            </div>
+                            <div>
+                                <p class="font-semibold text-xs text-on-surface leading-tight">{{ $user->name }}</p>
+                                <p class="text-[11px] text-on-surface-variant">{{ $user->email }}</p>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold {{ $user->role === 'admin' ? 'bg-on-tertiary-container text-white' : 'bg-surface-variant text-on-surface-variant' }}">
+                            {{ ucfirst($user->role) }}
+                        </span>
+                    </div>
+
+                    <div class="pt-1">
+                        <form action="{{ route('admin.role.update', $user) }}" method="POST" class="flex items-center gap-2">
+                            @csrf
+                            @method('PATCH')
+                            <select name="role" class="flex-1 px-3 py-2 bg-white border border-outline-variant rounded-lg text-xs font-medium focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" {{ auth()->id() === $user->id ? 'disabled' : '' }}>
+                                <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
+                                <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
+                            </select>
+
+                            @if (auth()->id() === $user->id)
+                                <button type="button" disabled class="px-4 py-2 bg-outline/20 text-outline text-xs rounded-lg font-medium cursor-not-allowed">
+                                    Ubah
+                                </button>
+                            @else
+                                <button type="submit" class="px-4 py-2 bg-primary-container text-white text-xs rounded-lg font-medium hover:brightness-110 active:scale-95 transition-all shadow-sm">
+                                    Ubah
+                                </button>
+                            @endif
+                        </form>
+                    </div>
+                </div>
+            @empty
+                <div class="text-center py-8 text-on-surface-variant text-sm">
+                    Belum ada pengguna terdaftar.
+                </div>
+            @endforelse
+        </div>
+
+    </div>
+</div>
 @endsection

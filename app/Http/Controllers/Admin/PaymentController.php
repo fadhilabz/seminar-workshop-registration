@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -12,47 +13,41 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        return view('admin.payments.index');
+        $payments = Payment::with(['registration.user', 'registration.event'])->latest()->paginate(10);
+        $pendingCount = Payment::where('status', 'pending')->count();
+        $confirmedCount = Payment::where('status', 'confirmed')->count();
+        $rejectedCount = Payment::where('status', 'rejected')->count();
+
+        return view('admin.payments.index', compact('payments', 'pendingCount', 'confirmedCount', 'rejectedCount'));
     }
 
     public function show($id)
     {
-        return view('admin.payments.show', compact('id'));
+        $payment = Payment::with(['registration.user', 'registration.event'])->findOrFail($id);
+        return view('admin.payments.show', compact('payment'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $payment = Payment::findOrFail($id);
+        $status = $request->input('status');
+
+        if (in_array($status, ['confirmed', 'rejected', 'pending'])) {
+            $payment->update([
+                'status' => $status,
+                'verified_at' => $status === 'confirmed' ? now() : null,
+            ]);
+            return redirect()->back()->with('success', 'Status pembayaran berhasil diperbarui.');
+        }
+
+        return redirect()->back()->with('error', 'Status pembayaran tidak valid.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $payment = Payment::findOrFail($id);
+        $payment->delete();
+
+        return redirect()->back()->with('success', 'Data pembayaran berhasil dihapus.');
     }
 }
