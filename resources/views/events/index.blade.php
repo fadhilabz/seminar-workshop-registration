@@ -42,164 +42,59 @@
 </div>
 <!-- Event Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-<!-- Card 1 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A professional business seminar setting with a speaker standing in front of a large screen displaying charts. The atmosphere is academic and professional, using a corporate color palette of navy blue and seafoam green. High-key studio lighting creates a bright and reliable visual tone for a learning event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-a5R_z6e_UMAfDhJiLMIZ6pYlCDoc4f25OKARmw8PpXSpmDwJxojLcxtEPnDRNzftEY537Jg967UV4FFWKH8CPo-wRW3NV8rJPPwLjA-UWkacSz1aHihxCC3YU4lA81JVF-rtZJh-RGGBJHsGXnf-xXs6ujJXwlh34NTa6brqNSnv9aW2qJgyuiWCdv_d7rt3xJ1YFDwt2PLFafukWJO1nT4Wp1u3Ledqkvo1o_k7LyEvWE_R7clOoQ"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-tertiary-container text-tertiary-fixed rounded-full text-label-md font-label-md uppercase tracking-wider">Seminar</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">24 Okt 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Strategi Transformasi Digital UMKM 2024</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-<span class="font-body-md text-body-md">Hotel Indonesia, Jakarta</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 250.000</span>
-<a href="{{ route('events.show', 1) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A hands-on workshop session showing diverse participants collaborating on design projects with laptops and sticky notes. The lighting is natural and vibrant, emphasizing a creative and interactive environment. The scene is styled with modern seafoam and teal accents, suggesting a high-value practical training session." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaKJMPLscZBSXdGquOM4FZ7aEZUquok8YU9aC1F77OpsYU8BYoncmjoi3rEepDlQDDvKKOr1ZKGp6uHWHG9Z1n0uU1U8l0i7lzqiKki0qFwR9hF1GTProq_hmeU5miaoaC10AmE-XLvHZ8W9C_8Xqq2fokHH9x2lG5GRGmx6mlAd9AdQsxcLuDBsJw1ul8pdH00_e93KNPoqxHvvna3Y6gyaNqxsU3ob7Q5Qtdt1BM-NiAl2bjckPYCg"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-label-md uppercase tracking-wider">Workshop</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">28 Okt 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Masterclass UI/UX Design: Dari Riset ke Prototipe</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">videocam</span>
-<span class="font-body-md text-body-md">Online via Zoom</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 150.000</span>
-<a href="{{ route('events.show', 2) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A professional medical seminar in a modern auditorium with bright medical-grade lighting. Doctors and health professionals are listening intently to a keynote speech about healthcare innovation. The visual style is clean and trustworthy, utilizing deep navy and bright white surfaces to convey academic reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHEP4IcIsrs65Bm5Dq_qofUrDU1StBYr9usG-Fafw9JXv39I0MVY-53E8vc1t4wtC6RJUVcCZkI6YI-hZrqY_g14QFykvj6hlKpxXODB3khGIJ_GeO33osvgKHJOGYvfsNLPeUt2aQ6lcnRAkGx7nmsatC95NPFhC456rrVsdYMOuf5w7vN7PMzk_uprCQcDfWM9LN5jYWtyHke10T6SPCxWeQzClHJkgcqGgFZH442Lq8ZeobkUi4BA"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-tertiary-container text-tertiary-fixed rounded-full text-label-md font-label-md uppercase tracking-wider">Seminar</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">02 Nov 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Inovasi Teknologi Kesehatan Masa Depan</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-<span class="font-body-md text-body-md">Gedung Graha Medika, Bandung</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Gratis</span>
-<a href="{{ route('events.show', 3) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A focused classroom workshop for financial planning, with participants using digital tablets and printed workbooks. The lighting is bright and even, highlighting an organized and professional atmosphere. Corporate navy blue and seafoam green elements are integrated into the room's design for a cohesive brand look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAg79rfjiL-7ONnV6fFeQMry_LIEzmkQwFPO3RVuEFmuoizthB9A33qrTb7DGONp1Ez_Zw6PWKeT_IAzmaWxIaZsfTs6kOavtDpUbfQHGN2mJtksEhA62NN72jHlVUgBVS3ZLRi4b8NQtjx7F6ec-tC3dZob4kG3rNo0sR93kSsXsmjaeYP91FIMjl46tcZpAgh76lIg8Bzpph8Cmxioni30mTtWivPKkTpMvSiG5BLY4nCdQZNRMNtA"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-label-md uppercase tracking-wider">Workshop</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">10 Nov 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Manajemen Keuangan Bisnis bagi Pemula</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-<span class="font-body-md text-body-md">Creative Space, Surabaya</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 500.000</span>
-<a href="{{ route('events.show', 4) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A large-scale technology conference with futuristic stage lighting in teal and seafoam. The speaker is demonstrating new AI capabilities on a screen. The mood is high-energy and innovative, using high-contrast lighting to emphasize a modern, tech-forward seminar experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwd0qc2a_KRbOwjISKgaWUnqmvp5CJ8-PXWB3Ehqq95pBrNu5Qa5c_75VLPVylcoW_41rqsMFnm--2aWuIrY_jBLOMIEoEXGRF350z1bAqpmo8LgwGHnUOO5Lz16QzSxX9KpDlvIhzKHGx7PtC1-Nc8y-uvPKzzIiIda01Yn-p4LPtd5JGLL4RiHIXK7H38Z18ituD3FmaUg9knRNFdZKkem8Me8GTrUa7uv6kwUtQqoODycozDSiIw"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-tertiary-container text-tertiary-fixed rounded-full text-label-md font-label-md uppercase tracking-wider">Seminar</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">15 Nov 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Kecerdasan Buatan dalam Industri Kreatif</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">videocam</span>
-<span class="font-body-md text-body-md">Online Webinar</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 75.000</span>
-<a href="{{ route('events.show', 5) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
-<!-- Card 6 -->
-<div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
-<div class="h-56 relative overflow-hidden">
-<img class="w-full h-full object-cover transition-standard hover:scale-105" data-alt="A sophisticated academic lecture hall with tiered seating and a large wooden podium. The lighting is soft and focused on the academic material being presented. The environment is clean and professional, with a color palette of navy blue and neutral tones to ensure a high-value learning atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqmF9CUypxVE72jlx3gwWx8rPy6XamIZvhX4xkS2b3hgXYc5gdoE89bCYi_UoXlDspi-8tQ_eHQxMqbhdQR0UvVy8_XbQwQbP8_95U5ixNXcRG9SOcIMwlBT14yG39lbyy45p88vcUS9TBTFZnMGoBwOpZ9b1gHigOdVt5Qjy5HCLbq9ULBN77qakKK0Aiqq_pgNAV6Aqy2b77G5rjPZitZBsIQ6rC1YFpBhA42foFKQuHCLk-cETpdQ"/>
-<div class="absolute top-4 left-4">
-<span class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-label-md uppercase tracking-wider">Workshop</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-3 text-secondary">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-md text-label-md">20 Nov 2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">Teknik Penulisan Jurnal Ilmiah Internasional</h3>
-<div class="flex items-center gap-2 mb-6 text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-<span class="font-body-md text-body-md">Auditorium Pusat, Yogyakarta</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="font-headline-md text-headline-md text-on-tertiary-container">Rp 350.000</span>
-<a href="{{ route('events.show', 6) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
-</div>
-</div>
-</div>
+    @forelse ($events as $event)
+        <div class="bg-white rounded-[24px] overflow-hidden shadow-soft card-hover transition-standard flex flex-col h-full border border-outline-variant/30">
+            <div class="h-56 relative overflow-hidden">
+                <img class="w-full h-full object-cover transition-standard hover:scale-105" 
+                     src="{{ $event->image ?? 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800' }}" 
+                     alt="{{ $event->title }}"/>
+                <div class="absolute top-4 left-4">
+                    @if (strtolower($event->type) === 'workshop')
+                        <span class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-label-md uppercase tracking-wider">
+                            {{ $event->type }}
+                        </span>
+                    @else
+                        <span class="px-3 py-1.5 bg-tertiary-container text-tertiary-fixed rounded-full text-label-md font-label-md uppercase tracking-wider">
+                            {{ $event->type }}
+                        </span>
+                    @endif
+                </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <div class="flex items-center gap-2 mb-3 text-secondary">
+                    <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    <span class="font-label-md text-label-md">{{ \Carbon\Carbon::parse($event->date)->format('d M Y') }}</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-3 line-clamp-2">{{ $event->title }}</h3>
+                <div class="flex items-center gap-2 mb-6 text-on-surface-variant">
+                    @if (\Illuminate\Support\Str::contains(strtolower($event->location ?? ''), 'online') || \Illuminate\Support\Str::contains(strtolower($event->location ?? ''), 'zoom') || \Illuminate\Support\Str::contains(strtolower($event->location ?? ''), 'webinar'))
+                        <span class="material-symbols-outlined text-[18px]">videocam</span>
+                    @else
+                        <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    @endif
+                    <span class="font-body-md text-body-md">{{ $event->location ?? 'Online' }}</span>
+                </div>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="font-headline-md text-headline-md text-on-tertiary-container">
+                        @if (empty($event->price) || $event->price == 0)
+                            Gratis
+                        @else
+                            Rp {{ number_format($event->price, 0, ',', '.') }}
+                        @endif
+                    </span>
+                    <a href="{{ route('events.show', $event->id) }}" class="inline-block px-6 py-2.5 bg-on-tertiary-container text-white rounded-full font-label-lg text-label-lg scale-95 active:scale-90 transition-transform shadow-sm hover:brightness-110">Daftar</a>
+                </div>
+            </div>
+        </div>
+    @empty
+        <div class="col-span-full text-center py-12 text-on-surface-variant font-body-lg">
+            Tidak ada event yang ditemukan.
+        </div>
+    @endforelse
 </div>
 <!-- Pagination -->
-<div class="flex justify-center items-center gap-2 pb-12">
-<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-standard">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary text-white font-label-lg text-label-lg">1</button>
-<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-standard font-label-lg text-label-lg">2</button>
-<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-standard font-label-lg text-label-lg">3</button>
-<span class="px-2 text-outline">...</span>
-<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-standard font-label-lg text-label-lg">12</button>
-<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-standard">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
+<div class="pb-12">
+    {{ $events->links() }}
 </div>
 </main>
 

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('title');
+            $table->string('slug')->unique();
             $table->string('type');
-            $table->timestamp('event_date');
-            $table->unsignedInteger('quota');
-            $table->decimal('price', 10, 2);
+            $table->dateTime('date');
+            $table->string('location')->nullable();
+            $table->unsignedInteger('quota')->default(100);
+            $table->decimal('price', 10, 2)->nullable();
             $table->string('image')->nullable();
             $table->string('status')->default('upcoming');
             $table->timestamps();

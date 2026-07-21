@@ -12,8 +12,10 @@ class Event extends Model
     protected $fillable = [
         'category_id',
         'title',
+        'slug',
         'type',
-        'event_date',
+        'date',
+        'location',
         'quota',
         'price',
         'image',
@@ -21,7 +23,7 @@ class Event extends Model
     ];
 
     protected $casts = [
-        'event_date' => 'datetime',
+        'date' => 'datetime',
     ];
 
     public function category()

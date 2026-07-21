@@ -29,8 +29,10 @@ Route::middleware(['auth', 'verified'])
         Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
     });
 
-Route::get('/events', fn() => view('events.index'))->name('events.index');
-Route::get('/events/{id}', fn($id) => view('events.show', ['id' => $id]))->name('events.show');
+use App\Http\Controllers\EventController;
+
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
+Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
 Route::get('/about', fn() => view('about'))->name('about');
 
 Route::fallback(fn() => response()->view('errors.404', [], 404));
