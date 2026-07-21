@@ -30,6 +30,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
+
     /**
      * Check if user is admin.
      */
