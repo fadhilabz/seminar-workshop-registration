@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Tambah Acara Baru')
+@section('title', 'Edit Acara')
 
 @section('content')
 <div class="w-full max-w-4xl mx-auto space-y-6">
@@ -13,14 +13,15 @@
                     <span>Kembali ke Daftar Acara</span>
                 </a>
             </div>
-            <h1 class="text-2xl font-bold text-primary">Tambah Acara Baru</h1>
-            <p class="text-sm text-on-surface-variant mt-1">Lengkapi detail acara di bawah ini untuk mempublikasikan seminar atau workshop Anda.</p>
+            <h1 class="text-2xl font-bold text-primary">Edit Acara: {{ $event->title }}</h1>
+            <p class="text-sm text-on-surface-variant mt-1">Perbarui detail dan informasi acara di bawah ini.</p>
         </div>
     </div>
 
     <!-- Form Section -->
-    <form action="{{ route('admin.events.store') }}" method="POST" class="space-y-6">
+    <form action="{{ route('admin.events.update', $event->id) }}" method="POST" class="space-y-6">
         @csrf
+        @method('PUT')
 
         <div class="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl border border-outline-variant/30 shadow-sm space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -31,7 +32,7 @@
                     <input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm @error('title') border-error @enderror" 
                            id="title" 
                            name="title" 
-                           value="{{ old('title') }}" 
+                           value="{{ old('title', $event->title) }}" 
                            placeholder="Contoh: Modern UI Design Masterclass 2024" 
                            required 
                            type="text"/>
@@ -48,7 +49,7 @@
                             name="category_id">
                         <option value="">Pilih Kategori</option>
                         @foreach ($categories as $cat)
-                            <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>
+                            <option value="{{ $cat->id }}" {{ old('category_id', $event->category_id) == $cat->id ? 'selected' : '' }}>
                                 {{ $cat->name }}
                             </option>
                         @endforeach
@@ -64,9 +65,10 @@
                     <select class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm @error('status') border-error @enderror" 
                             id="status" 
                             name="status">
-                        <option value="upcoming" {{ old('status', 'upcoming') == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
-                        <option value="published" {{ old('status') == 'published' ? 'selected' : '' }}>Published</option>
-                        <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>Draft</option>
+                        <option value="upcoming" {{ old('status', $event->status) == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
+                        <option value="published" {{ old('status', $event->status) == 'published' ? 'selected' : '' }}>Published</option>
+                        <option value="draft" {{ old('status', $event->status) == 'draft' ? 'selected' : '' }}>Draft</option>
+                        <option value="cancelled" {{ old('status', $event->status) == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                     </select>
                     @error('status')
                         <p class="text-error text-xs mt-1">{{ $message }}</p>
@@ -82,7 +84,7 @@
                                    name="type" 
                                    type="radio" 
                                    value="Seminar" 
-                                   {{ old('type', 'Seminar') == 'Seminar' ? 'checked' : '' }}/>
+                                   {{ old('type', strtolower($event->type)) == 'seminar' || strtolower($event->type) == 'seminar' ? 'checked' : '' }}/>
                             <span class="text-sm font-medium text-on-surface">Seminar</span>
                         </label>
                         <label class="flex items-center gap-2 cursor-pointer">
@@ -90,7 +92,7 @@
                                    name="type" 
                                    type="radio" 
                                    value="Workshop" 
-                                   {{ old('type') == 'Workshop' ? 'checked' : '' }}/>
+                                   {{ old('type', strtolower($event->type)) == 'workshop' || strtolower($event->type) == 'workshop' ? 'checked' : '' }}/>
                             <span class="text-sm font-medium text-on-surface">Workshop</span>
                         </label>
                     </div>
@@ -105,7 +107,7 @@
                     <input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm @error('date') border-error @enderror" 
                            id="date" 
                            name="date" 
-                           value="{{ old('date') }}" 
+                           value="{{ old('date', $event->date ? \Carbon\Carbon::parse($event->date)->format('Y-m-d\TH:i') : '') }}" 
                            required 
                            type="datetime-local"/>
                     @error('date')
@@ -121,7 +123,7 @@
                         <input class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm @error('location') border-error @enderror" 
                                id="location" 
                                name="location" 
-                               value="{{ old('location') }}" 
+                               value="{{ old('location', $event->location) }}" 
                                placeholder="Hotel Indonesia, Jakarta atau Online via Zoom" 
                                type="text"/>
                     </div>
@@ -139,7 +141,7 @@
                                id="quota" 
                                min="1" 
                                name="quota" 
-                               value="{{ old('quota', 100) }}" 
+                               value="{{ old('quota', $event->quota) }}" 
                                placeholder="100" 
                                type="number"/>
                     </div>
@@ -157,7 +159,7 @@
                                id="price" 
                                min="0" 
                                name="price" 
-                               value="{{ old('price') }}" 
+                               value="{{ old('price', $event->price) }}" 
                                placeholder="0 (Kosongkan atau 0 untuk Gratis)" 
                                type="number"/>
                     </div>
@@ -172,9 +174,17 @@
                     <input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm @error('image') border-error @enderror" 
                            id="image" 
                            name="image" 
-                           value="{{ old('image') }}" 
+                           value="{{ old('image', $event->image) }}" 
                            placeholder="https://images.unsplash.com/photo-..." 
                            type="url"/>
+                    @if ($event->image)
+                        <div class="mt-2 flex items-center gap-3">
+                            <div class="w-20 h-14 rounded-lg overflow-hidden border border-outline-variant/30">
+                                <img src="{{ $event->image }}" alt="Preview" class="w-full h-full object-cover"/>
+                            </div>
+                            <span class="text-xs text-on-surface-variant">Poster saat ini</span>
+                        </div>
+                    @endif
                     @error('image')
                         <p class="text-error text-xs mt-1">{{ $message }}</p>
                     @enderror
@@ -189,7 +199,7 @@
                 Batal
             </a>
             <button type="submit" class="px-8 py-2.5 rounded-xl font-medium text-sm bg-on-tertiary-container text-white shadow hover:brightness-110 active:scale-95 transition-all">
-                Simpan Acara
+                Simpan Perubahan
             </button>
         </div>
     </form>
